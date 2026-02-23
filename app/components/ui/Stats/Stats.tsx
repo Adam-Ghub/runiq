@@ -1,4 +1,4 @@
-import { HeartPulse, ShieldCheck, Flame, Smartphone } from 'lucide-react';
+import { HeartPulse, Flame, BedDouble, HandHeart } from 'lucide-react';
 import Container from '../../Container';
 import StatCard from '../Stats/Card';
 
@@ -7,19 +7,19 @@ const statsData = [
     value: "+3 roky",
     label: "Dlouhověkost v každém kroku",
     description: "Pravidelný pohyb prodlužuje očekávanou délku života.",
-    icon: HeartPulse
+    icon: HandHeart
   },
   {
     value: "-30 %",
     label: "Srdce jako zvon",
     description: "Výrazné snížení rizika kardiovaskulárních chorob.",
-    icon: ShieldCheck
+    icon: HeartPulse
   },
   {
     value: "+15 %",
     label: "Kvalitnější spánek",
     description: "Rychlejší usínání a více času v hluboké, regenerační fázi spánku.",
-    icon: Smartphone
+    icon: BedDouble
   },
   {
     value: "400-900 kcal",
