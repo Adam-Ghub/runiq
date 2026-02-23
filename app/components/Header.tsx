@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { sneaker } from '@lucide/lab';
 import { Icon, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import Container from './Container';
 
 const navLinks = [
     { label: 'Home', href: '/' },
@@ -17,7 +18,7 @@ export default function Header() {
 
     return (
         <header className="w-full bg-white border-b border-gray-100">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Container >
                 <div className="flex items-center justify-between h-16">
                     {/* Logo sekce */}
                     <div className="flex items-center gap-2">
@@ -75,7 +76,7 @@ export default function Header() {
                         </nav>
                     </div>
                 )}
-            </div>
+            </Container>
         </header>
     );
 }
