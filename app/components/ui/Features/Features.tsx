@@ -1,28 +1,28 @@
-import { Timer, Heart, Footprints } from 'lucide-react';
+import {Heart, Footprints, Lightbulb } from 'lucide-react';
 import Container from '../../Container';
 import FeatureCard from './Card';
 
 const features = [
   {
-    title: "Distances",
-    description: "Custom training plans for 5K, 10K, Half, and Full Marathons.",
-    linkText: "View Plans",
-    linkHref: "/plans",
-    icon: Timer
-  },
-  {
-    title: "Heart Zones",
-    description: "Optimize your heart rate zones for maximum metabolic efficiency.",
-    linkText: "Analyze Zones",
-    linkHref: "/coaching",
+    title: "Tepové Zóny",
+    description: "Naučíme vás, jak si nastavit vlastní tepové zóny pro lepší efektivitu tréninků a správné řízení vaší intenzity.",
+    linkText: "jak na výpočet",
+    linkHref: "/tepove-zony",
     icon: Heart
   },
   {
-    title: "Shoe Finder",
-    description: "Find the perfect footwear based on your stride, cadence, and arch.",
-    linkText: "Find Shoes",
-    linkHref: "/shoes",
+    title: "Vybavení na běh",
+    description: "Doporučíme běžecké boty pro každý povrch. Správné tlumení chrání klouby a předchází zraněním.",
+    linkText: "Vybrat boty",
+    linkHref: "/vybavení",
     icon: Footprints
+  },
+  {
+    title: "Tipy",
+    description: "Běhejte chytřeji. Praktické tipy pro lepší techniku, rychlejší regeneraci a radost z každého dalšího kilometru",
+    linkText: "Zjistit více",
+    linkHref: "/tipy",
+    icon: Lightbulb
   }
 ];
 

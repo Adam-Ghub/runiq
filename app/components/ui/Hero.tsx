@@ -8,15 +8,14 @@ export default function Hero() {
         <div className="flex flex-col items-center text-center">
           {/* Nadpis */}
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-black tracking-tight leading-[1.1]">
-            Elevate Your Run with <br />
-            <span className="text-blue">Precision</span>
+            Zlepšete svůj běh <br />
+            <span className="text-blue">jednoduše</span>
           </h1>
 
           {/* Podnadpis */}
           <p className="mt-6 text-base md:text-lg text-gray-600 max-w-2xl leading-relaxed">
-            Professional running advice tailored to your biology and goals. 
-            Discover your optimal training zones, find the perfect shoes, 
-            and master every distance.
+            Objevte radost z pohybu bez zbytečného trápení. Pomůžeme vám porozumět vašemu tepu, vybrat správné boty
+            a najít tipy, se kterými vám to půjde samo.
           </p>
 
           {/* Tlačítka */}

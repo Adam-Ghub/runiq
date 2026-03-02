@@ -14,7 +14,7 @@ export default function Item({ question, answer }: ItemProps) {
     <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden mb-4 shadow-sm">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+        className="w-full flex items-center justify-between p-6 text-left hover:cursor-pointer transition-colors"
       >
         <span className="text-lg font-bold text-black pr-8">
           {question}

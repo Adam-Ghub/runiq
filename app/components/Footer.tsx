@@ -5,27 +5,19 @@ import Container from '../components/Container';
 
 const footerLinks = [
   {
-    title: 'Product',
+    title: 'Průvodce',
     links: [
-      { label: 'Features', href: '#' },
-      { label: 'Pricing', href: '#' },
-      { label: 'Testimonials', href: '#' },
+      { label: 'Tepové zóny', href: '/tepove-zony' },
+      { label: 'Vybavení', href: '/vybaveni' },
+      { label: 'Tipy', href: '/tipy' },
     ],
   },
   {
-    title: 'Resources',
+    title: 'Kontakt',
     links: [
-      { label: 'Blog', href: '#' },
-      { label: 'Community', href: '#' },
-      { label: 'Support', href: '#' },
-    ],
-  },
-  {
-    title: 'Company',
-    links: [
-      { label: 'About', href: '#' },
-      { label: 'Careers', href: '#' },
-      { label: 'Legal', href: '#' },
+      { label: 'info@runiq.cz', href: '#' },
+      { label: '+420 123 456 789', href: '#' },
+      { label: 'Název ulice 123, Město', href: '#' },
     ],
   },
 ];
@@ -34,7 +26,7 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-100 pt-16 pb-8">
       <Container>
-        <div className="flex flex-col md:flex-row justify-between gap-12 mb-16">
+        <div className="flex items-center flex-col md:flex-row justify-between gap-12 mb-12">
           {/* Levá strana: Logo a Popis */}
           <div className="max-w-xs">
             <div className="flex items-center gap-2 mb-4">
@@ -46,16 +38,16 @@ export default function Footer() {
               <span className="text-xl font-bold text-black tracking-tight">Runiq</span>
             </div>
             <p className="text-gray-500 leading-relaxed text-sm">
-              Empowering runners of all levels to reach their peak performance through science-backed training.
+              V běhání se s námi neztratíte. Ukážeme vám, že začít je jednodušší, než si myslíte!
             </p>
           </div>
 
           {/* Pravá strana: Sloupce s odkazy */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 md:gap-20">
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-8 md:gap-20">
             {footerLinks.map((section) => (
               <div key={section.title}>
-                <h4 className="font-bold text-black mb-6">{section.title}</h4>
-                <ul className="space-y-4">
+                <h4 className="font-bold text-black mb-4">{section.title}</h4>
+                <ul className="space-y-3">
                   {section.links.map((link) => (
                     <li key={link.label}>
                       <Link 
@@ -70,13 +62,6 @@ export default function Footer() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Spodní lišta: Vycentrovaná autorská práva */}
-        <div className="pt-8 border-t border-gray-50 text-center">
-          <p className="text-gray text-sm">
-            	&#169; {new Date().getFullYear()} Runiq. All rights reserved.
-          </p>
         </div>
       </Container>
     </footer>

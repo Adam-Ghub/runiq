@@ -7,10 +7,9 @@ import { useState } from 'react';
 import Container from './Container';
 
 const navLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Plans', href: '/plans' },
-    { label: 'Coaching', href: '/coaching' },
-    { label: 'About', href: '/about' },
+    { label: 'Tepové zóny', href: '/tepove-zony' },
+    { label: 'Vybavení', href: '/vybaveni' },
+    { label: 'Tipy', href: '/tipy' },
 ];
 
 export default function Header() {
