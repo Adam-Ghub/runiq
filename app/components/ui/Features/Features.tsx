@@ -5,7 +5,7 @@ import FeatureCard from './Card';
 const features = [
   {
     title: "Tepové Zóny",
-    description: "Naučíme vás, jak si nastavit vlastní tepové zóny pro lepší efektivitu tréninků a správné řízení vaší intenzity.",
+    description: "Vypočítáme vám, tepové zóny pro lepší efektivitu tréninků a správné řízení vaší intenzity.",
     linkText: "jak na výpočet",
     linkHref: "/tepove-zony",
     icon: Heart

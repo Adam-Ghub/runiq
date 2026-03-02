@@ -20,14 +20,14 @@ export default function Header() {
             <Container >
                 <div className="flex items-center justify-between h-16">
                     {/* Logo sekce */}
-                    <div className="flex items-center gap-2">
+                    <Link href="/" className="flex items-center gap-2">
                         <Icon
                             iconNode={sneaker}
                             className="w-8 h-8 text-[var(--blue-text)]"
                             strokeWidth={2}
                         />
                         <span className="text-xl font-bold text-black tracking-tight">Runiq</span>
-                    </div>
+                    </Link>
 
                     {/* Navigace pro desktop */}
                     <nav className="hidden md:flex items-center gap-8">

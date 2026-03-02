@@ -5,7 +5,7 @@
   --foreground: #FFFFFF;
   --black-text: #0F172A;
   --gray-text: #64748B;
-  --blue-text: #0060E6;;
+  --blue-text: #0060E6;
 }
 
 @theme {
@@ -16,4 +16,12 @@
   --color-blue: var(--blue-text);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-geist-sans), ui-sans-serif, system-ui;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
