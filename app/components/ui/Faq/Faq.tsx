@@ -26,8 +26,8 @@ const faqData = [
 
 export default function Faq() {
   return (
-    <section className="py-20 bg-background">
-      <Container>
+    <section className="w-full py-20 bg-background">
+      <Container className='bg-background'>
         {/* Hlavička sekce */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold text-black mb-4 tracking-tight">
