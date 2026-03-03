@@ -10,7 +10,7 @@ const features = [
     linkHref: "/tepove-zony",
     icon: Heart
   },
-  {
+ /* {
     title: "Vybavení na běh",
     description: "Doporučíme běžecké boty pro každý povrch. Správné tlumení chrání klouby a předchází zraněním.",
     linkText: "Vybrat boty",
@@ -23,7 +23,7 @@ const features = [
     linkText: "Zjistit více",
     linkHref: "/tipy",
     icon: Lightbulb
-  }
+  }*/
 ];
 
 export default function Features() {

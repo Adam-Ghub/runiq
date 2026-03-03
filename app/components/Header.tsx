@@ -8,8 +8,8 @@ import Container from './Container';
 
 const navLinks = [
     { label: 'Tepové zóny', href: '/tepove-zony' },
-    { label: 'Vybavení', href: '/vybaveni' },
-    { label: 'Tipy', href: '/tipy' },
+   /* { label: 'Vybavení', href: '/vybaveni' },
+    { label: 'Tipy', href: '/tipy' },*/
     { label: 'Kontakt', href: '/kontakt' }
 ];
 

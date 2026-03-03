@@ -8,8 +8,8 @@ const footerLinks = [
     title: 'Průvodce',
     links: [
       { label: 'Tepové zóny', href: '/tepove-zony' },
-      { label: 'Vybavení', href: '/vybaveni' },
-      { label: 'Tipy', href: '/tipy' },
+      /*{ label: 'Vybavení', href: '/vybaveni' },
+      { label: 'Tipy', href: '/tipy' },*/
     ],
   },
   {
