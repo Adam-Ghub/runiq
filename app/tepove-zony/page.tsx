@@ -4,9 +4,9 @@ import TepoveZonyClient from "./Tepove_zony";
 
 export const metadata: Metadata = {
   title: "Runiq | Cesta k lepšímu běhu",
-  description: "Vypočítejte si své tepové zóny pro přesnější a efektivnější tréninky. Zjistěte ideální pásma pro spalování tuků i rozvoj kondice.",
+  description: "Nevíte si rady s tepovými zónami? Pomůžeme vám zjistit cílové tepy pro lepší výkon a rozvoj kondice.",
   icons: {
-    icon: "/favicon.svg"
+    icon: "icon.svg"
   }
 };
 

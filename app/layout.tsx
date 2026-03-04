@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Runiq | Cesta k lepšímu běhu",
   description: "Objevte radost z pohybu bez trápení. Naučíme vás rozumět tepovým zónám, doporučíme správné běžecké boty a poradíme, jak běhat zdravěji.",
   icons: {
-    icon: "/favicon.svg"
+    icon: "icon.svg"
   }
 };
 
