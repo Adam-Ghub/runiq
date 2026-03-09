@@ -64,7 +64,7 @@ export default function Zones({ age, restingHR, isMaxHREnabled, maxHROverride }:
     <Container className=" mt-24 mb-24 px-6">
       <div className="mb-16 text-center">
         <h2 className="text-5xl font-bold text-black mb-4 tracking-tight">Vaše tréninkové zóny</h2>
-        <p className="text-gray text-xl font-medium">Rozdělení intenzity na základě vaší kondice.</p>
+        <p className="mt-6 text-base md:text-lg text-gray-600 max-w-2xl mx-auto  leading-relaxed">Spočítejte si zóny pro běžecký trénink. Zjistěte svou maximální tepovou frekvenci a v jakém tempu probíhá nejefektivnější hubnutí běháním.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">

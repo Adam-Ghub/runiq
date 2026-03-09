@@ -14,8 +14,7 @@ export default function Hero() {
 
           {/* Podnadpis */}
           <p className="mt-6 text-base md:text-lg text-gray-600 max-w-2xl leading-relaxed">
-            Objevte radost z pohybu bez zbytečného trápení. Pomůžeme vám porozumět vašemu tepu, vybrat správné boty
-            a najít tipy, se kterými vám to půjde samo.
+            Objevte radost z pohybu bez zbytečného trápení. Pomůžeme vám pochopit tep, vybrat běžecké boty a sestavit tréninkový plán pro běh, se kterým to půjde samo.
           </p>
 
           {/* Tlačítka */}
@@ -25,7 +24,7 @@ export default function Hero() {
               href="/plans" 
               className="px-8 py-4 bg-blue text-white font-bold rounded-full transition-all shadow-lg shadow-blue-200 text-center"
             >
-              Začít trénovat
+              Vypočítat tepové zóny
             </Link>
 
             {/* Vedlejší tlačítko */}

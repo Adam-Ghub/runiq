@@ -15,10 +15,50 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Runiq | Cesta k lepšímu běhu",
-  description: "Objevte radost z pohybu bez trápení. Naučíme vás rozumět tepovým zónám, doporučíme správné běžecké boty a poradíme, jak běhat zdravěji.",
+  metadataBase: new URL('https://runiq.me'),
+  title: {
+    default: 'Runiq | Cesta k lepšímu běhu',
+    template: '%s | Runiq'
+  },
+  description: 'Runiq je váš průvodce běháním. Kalkulačka tepových zón, tipy jak začít běhat, běžecké vybavení a tréninkové plány. Běhejte chytřeji a zdravěji.',
+  keywords: [
+    'běhání', 'běh', 'tepové zóny', 'běžecký trénink', 'kalkulačka tepových zón',
+    'jak začít běhat', 'běh pro začátečníky', 'běžecké boty', 'hubnutí běháním',
+    'maximální tepová frekvence', 'tréninkový plán', 'Karvonen metoda',
+    'intervalový trénink', 'regenerace po běhu', 'běžecká obuv',
+    'výpočet tepových zón', 'spalování tuků běh', 'kondice', 'kardio trénink'
+  ],
+  authors: [{ name: 'Runiq' }],
+  creator: 'Runiq',
+  openGraph: {
+    type: 'website',
+    locale: 'cs_CZ',
+    url: 'https://runiq.me',
+    siteName: 'Runiq',
+    title: 'Runiq | Cesta k lepšímu běhu',
+    description: 'Váš průvodce běháním. Kalkulačka tepových zón online zdarma, tipy pro začátečníky i pokročilé běžce.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Runiq | Cesta k lepšímu běhu',
+    description: 'Váš průvodce běháním. Kalkulačka tepových zón online zdarma.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://runiq.me',
+  },
   icons: {
-    icon: "icon.svg"
+    icon: '/icon.svg',
   }
 };
 
