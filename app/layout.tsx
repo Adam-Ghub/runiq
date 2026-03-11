@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: 'Runiq | Cesta k lepšímu běhu',
     template: '%s | Runiq'
   },
-  description: 'Runiq je váš průvodce běháním. Kalkulačka tepových zón, tipy jak začít běhat, běžecké vybavení a tréninkové plány. Běhejte chytřeji a zdravěji.',
+  description: 'Runiq je váš průvodce světem běhání. Kalkulačka tepových zón, tipy jak začít běhat, běžecké vybavení a tréninkové plány. Začněte běhat správně ještě dnes.',
   keywords: [
     'běhání', 'běh', 'tepové zóny', 'běžecký trénink', 'kalkulačka tepových zón',
     'jak začít běhat', 'běh pro začátečníky', 'běžecké boty', 'hubnutí běháním',
@@ -36,12 +36,12 @@ export const metadata: Metadata = {
     url: 'https://runiq.me',
     siteName: 'Runiq',
     title: 'Runiq | Cesta k lepšímu běhu',
-    description: 'Váš průvodce běháním. Kalkulačka tepových zón online zdarma, tipy pro začátečníky i pokročilé běžce.',
+    description: 'Váš průvodce světem běhání. Kalkulačka tepových zón online zdarma, tipy pro začátečníky i pokročilé běžce.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Runiq | Cesta k lepšímu běhu',
-    description: 'Váš průvodce běháním. Kalkulačka tepových zón online zdarma.',
+    description: 'Váš průvodce světem běhání. Kalkulačka tepových zón online zdarma.',
   },
   robots: {
     index: true,
@@ -56,6 +56,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://runiq.me',
+    languages: {
+      'cs-CZ': 'https://runiq.me',
+    },
   },
   icons: {
     icon: '/icon.svg',
