@@ -5,7 +5,6 @@ interface StatCardProps {
   label: string;
   description: string;
   Icon: LucideIcon;
-  Alt: string;
 }
 
 export default function StatCard({ value, label, description, Icon }: StatCardProps) {
@@ -22,12 +21,12 @@ export default function StatCard({ value, label, description, Icon }: StatCardPr
       </span>
 
       {/* Tučný krátký popisek */}
-      <h3 className="text-lg font-bold text-black mb-3 leading-tight max-w-[200px]">
+      <h3 className="text-lg font-bold text-black mb-3 leading-tight max-w-50">
         {label}
       </h3>
 
       {/* Detailní text */}
-      <p className="text-sm text-gray leading-relaxed max-w-[240px]">
+      <p className="text-sm text-gray leading-relaxed max-w-60">
         {description}
       </p>
     </div>

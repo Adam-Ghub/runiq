@@ -1,4 +1,4 @@
-import React from 'react';
+import { cloneElement, type ReactElement } from 'react';
 import { Check } from 'lucide-react';
 
 interface SelectionCardProps {
@@ -21,19 +21,17 @@ export const SelectionCard = ({
   return (
     <div
       onClick={onClick}
-      className={`
-        relative cursor-pointer p-8 rounded-2xl border-2 transition-all duration-300 bg-white
-        /* Efekt při výběru: Modrý rámeček a jemná záře */
-        ${isSelected 
-          ? 'border-blue-600 shadow-lg shadow-blue-50 ring-1 ring-blue-600' 
-          : 'border-gray-100 shadow-sm hover:border-gray-200 hover:shadow-md'}
-      `}
+      className={`relative cursor-pointer p-8 rounded-2xl border-2 transition-all duration-300 bg-white ${
+        isSelected
+          ? 'border-blue-600 shadow-lg shadow-blue-50 ring-1 ring-blue-600'
+          : 'border-gray-100 shadow-sm hover:border-gray-200 hover:shadow-md'
+      }`}
     >
       {/* Horní část: Ikona a vizuální indikátor výběru */}
       <div className="flex justify-between items-start mb-6">
         <div className={`p-3 rounded-xl ${isSelected ? 'bg-blue-50 text-blue-600' : 'bg-gray-50 text-gray-400'}`}>
           {/* Tady se vykreslí ikona, kterou pošleš v props */}
-          {React.cloneElement(icon as React.ReactElement<{ size?: number }>, { size: 32 })}
+          {cloneElement(icon as ReactElement<{ size?: number }>, { size: 32 })}
         </div>
         
         {/* Skrytý radio button efekt pro lepší UX */}
@@ -53,7 +51,7 @@ export const SelectionCard = ({
       <ul className="space-y-3">
         {benefits.map((benefit, index) => (
           <li key={index} className="flex items-start text-sm text-gray-600">
-            <div className="mt-1 mr-3 flex-shrink-0">
+            <div className="mt-1 mr-3 shrink-0">
               {/* Tvoje ikonická modrá fajfka */}
               <div className="bg-blue-50 p-0.5 rounded-full">
                 <Check size={12} className="text-blue-600" strokeWidth={3} />

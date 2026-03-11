@@ -23,7 +23,7 @@ export default function CalculatorPage({
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
-    <div className="bg-foreground rounded-[32px] shadow-2xl p-12 w-full max-w-xl border border-gray/5">
+    <div className="bg-foreground rounded-4xl shadow-2xl p-12 w-full max-w-xl border border-gray/5">
       
       <h2 className="text-center text-2xl font-black text-black mb-14">
         Kalkulačka tepových zón

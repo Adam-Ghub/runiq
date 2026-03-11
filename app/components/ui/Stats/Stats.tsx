@@ -8,28 +8,24 @@ const statsData = [
     label: "Dlouhověkost v každém kroku",
     description: "Pravidelný pohyb prodlužuje očekávanou délku života.",
     icon: HandHeart,
-    alt: ""
   },
   {
     value: "-30 %",
     label: "Srdce jako zvon",
     description: "Výrazné snížení rizika kardiovaskulárních onemocnění.",
     icon: HeartPulse,
-    alt: ""
   },
   {
     value: "+15 %",
     label: "Kvalitnější spánek",
     description: "Rychlejší usínání a více času v hluboké, regenerační fázi spánku.",
     icon: BedDouble,
-    alt: "postel"
   },
   {
     value: "400-900 kcal",
     label: "Efektivní spalování kalorií",
     description: "Jeden z nejlepších způsobů spalování kalorií",
     icon: Flame,
-    alt: ""
   }
 ];
 
@@ -56,7 +52,6 @@ export default function Stats() {
                 label={item.label}
                 description={item.description}
                 Icon={item.icon}
-                Alt={item.alt}
               />
             </div>
           ))}

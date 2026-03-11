@@ -24,7 +24,7 @@ export default function Header() {
                     <Link href="/" className="flex items-center gap-2">
                         <Icon
                             iconNode={sneaker}
-                            className="w-8 h-8 text-[var(--blue-text)]"
+                            className="w-8 h-8 text-(--blue-text)"
                             strokeWidth={2}
                         />
                         <span className="text-xl font-bold text-black tracking-tight">Runiq</span>
@@ -36,11 +36,11 @@ export default function Header() {
                             <Link
                                 key={link.label}
                                 href={link.href}
-                                className="relative text-black font-medium pb-1 group transition-colors hover:text-[var(--blue-text)]"
+                                className="relative text-black font-medium pb-1 group transition-colors hover:text-(--blue-text)"
                             >
                                 {link.label}
                                 {/* Animovaná čára */}
-                                <span className="absolute left-0 bottom-0 w-full h-[2px] bg-[var(--blue-text)] transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100" />
+                                <span className="absolute left-0 bottom-0 w-full h-0.5 bg-(--blue-text) transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100" />
                             </Link>
                         ))}
                     </nav>
@@ -61,13 +61,13 @@ export default function Header() {
 
                 {/* Mobilní menu*/}
                 {isOpen && (
-                    <div className="md:hidden absolute right-4 top-16 bg-white border border-gray-100 rounded-xl shadow-xl z-50 min-w-[140px] overflow-hidden mt-2">
+                    <div className="md:hidden absolute right-4 top-16 bg-white border border-gray-100 rounded-xl shadow-xl z-50 min-w-35 overflow-hidden mt-2">
                         <nav className="flex flex-col p-2">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.label}
                                     href={link.href}
-                                    className="px-4 py-2 text-sm text-black font-medium hover:bg-gray-50 hover:text-[var(--blue-text)] transition-colors rounded-lg"
+                                    className="px-4 py-2 text-sm text-black font-medium hover:bg-gray-50 hover:text-(--blue-text) transition-colors rounded-lg"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {link.label}

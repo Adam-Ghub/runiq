@@ -26,18 +26,6 @@ export const SHOE_DATABASE: Shoe[] = [
     description: 'Kultovní bota pro každodenní běhání na asfaltu. Ideální pro ty, co hledají měkký dopad a šetří své klouby.'
   },
   {
-    id: 'saucony_endorphin_speed_3',
-    brand: 'Saucony',
-    name: 'Endorphin Speed 3',
-    surface: 'road',
-    goal: 'speed',
-    fit: 'standard',
-    image: '/shoes/saucony_endorphin_speed_3.webp',
-    pros: ['Nylonový plát pro odraz', 'Extrémně dynamická', 'Skvělá na intervaly'],
-    priceRange: '4 200 - 4 900 Kč',
-    description: 'Rychlostní raketa s nylonovým plátem, která tě podrží při tempových trénincích i závodech.'
-  },
-  {
     id: 'brooks_adrenaline_gts_23',
     brand: 'Brooks',
     name: 'Adrenaline GTS 23',
@@ -116,7 +104,7 @@ export const SHOE_DATABASE: Shoe[] = [
   {
     id: 'nike_pegasus_40',
     brand: 'Nike',
-    name: 'Air Zoom Pegasus 40',
+    name: 'Pegasus 40',
     surface: 'hybrid',
     goal: 'daily',
     fit: 'standard',

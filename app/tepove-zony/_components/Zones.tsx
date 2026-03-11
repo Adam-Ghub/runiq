@@ -69,7 +69,7 @@ export default function Zones({ age, restingHR, isMaxHREnabled, maxHROverride }:
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
         {zonesData.map((zone) => (
-          <div key={zone.id} className="relative bg-foreground rounded-[32px] p-10 border-4 border-gray/10 flex flex-col transition-all hover:shadow-xl">
+          <div key={zone.id} className="relative bg-foreground rounded-4xl p-10 border-4 border-gray/10 flex flex-col transition-all hover:shadow-xl">
             <div className={`w-18 h-18 rounded-full border-3 ${zone.circleBorder} flex items-center justify-center mx-auto mb-8`}>
               <span className={`font-black text-xl ${zone.color}`}>{zone.id}</span>
             </div>
@@ -77,8 +77,8 @@ export default function Zones({ age, restingHR, isMaxHREnabled, maxHROverride }:
               <h3 className="font-bold text-black text-2xl mb-1">{zone.name}</h3>
               <p className={`font-black text-xl ${zone.color}`}>{zone.min}-{zone.max} BPM</p>
             </div>
-            <p className="text-gray text-sm text-center mb-10 leading-relaxed min-h-[48px]">{zone.desc}</p>
-            <div className="mb-10 flex-grow">
+            <p className="text-gray text-sm text-center mb-10 leading-relaxed min-h-12">{zone.desc}</p>
+            <div className="mb-10 grow">
               <ul className="space-y-4">
                 {zone.benefits.map((benefit, index) => (
                   <li key={index} className="flex items-center gap-3">

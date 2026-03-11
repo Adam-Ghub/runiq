@@ -17,7 +17,7 @@ export default function Card({ title, description, linkText, linkHref, Icon }: C
       </div>
 
       <h3 className="text-xl font-bold text-black mb-3">{title}</h3>
-      <p className="text-gray leading-relaxed mb-8 flex-grow">
+      <p className="text-gray leading-relaxed mb-8 grow">
         {description}
       </p>
 

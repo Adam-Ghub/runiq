@@ -4,7 +4,7 @@ import Heading from '../Heading';
 
 export default function Hero() {
   return (
-    <section className="bg-white h-[600px] flex py-16 md:py-12">
+    <section className="bg-white h-150 flex py-16 md:py-12">
       <Container className='flex items-center justify-center'>
         <div className="flex flex-col items-center text-center">
           <Heading

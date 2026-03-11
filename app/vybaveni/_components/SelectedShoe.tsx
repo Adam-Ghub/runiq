@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
+import Image from 'next/image';
 import { CheckCircle2, RefreshCcw, Trophy, Tag, Gauge, Map } from 'lucide-react';
 import { Shoe } from '../_lib/data';
 
@@ -28,17 +29,20 @@ export const SelectedShoe = ({ results, onReset }: SelectedShoeProps) => {
 
         <div className="bg-white rounded-[2.5rem] border-2 border-blue-600 p-8 md:p-12 shadow-2xl shadow-blue-100 relative overflow-hidden">
           {/* Match Score Badge */}
-          <div className="absolute top-0 right-0 bg-blue-600 text-white px-10 py-4 rounded-bl-[2rem] font-black text-2xl">
+          <div className="absolute top-0 right-0 bg-blue-600 text-white px-10 py-4 rounded-bl-4xl font-black text-2xl">
             {winner.matchScore}%
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* OBRÁZEK */}
-            <div className="flex justify-center items-center h-[420px] rounded-3xl overflow-hidden">
-              <img 
-                src={winner.image} 
-                alt={winner.name} 
-                className="w-full h-full object-contain"
+            <div className="relative h-105 rounded-3xl overflow-hidden">
+              <Image
+                src={winner.image}
+                alt={`${winner.brand} ${winner.name}`}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
               />
             </div>
 
@@ -68,13 +72,13 @@ export const SelectedShoe = ({ results, onReset }: SelectedShoeProps) => {
               <div className="grid grid-cols-1 gap-3 mb-10">
                 {winner.pros.map((pro, i) => (
                   <div key={i} className="flex items-center gap-3 text-gray-800 font-semibold bg-blue-50/50 p-3 rounded-xl border border-blue-50">
-                    <CheckCircle2 className="text-blue-600 flex-shrink-0" size={20} />
+                    <CheckCircle2 className="text-blue-600 shrink-0" size={20} />
                     {pro}
                   </div>
                 ))}
                 {/* CENA */}
                 <div className="flex items-center gap-3 text-gray-800 font-semibold bg-blue-50/50 p-3 rounded-xl border border-blue-50">
-                  <CheckCircle2 className="text-blue-600 flex-shrink-0" size={20} />
+                  <CheckCircle2 className="text-blue-600 shrink-0" size={20} />
                   <span className="whitespace-nowrap">{winner.priceRange}</span>
                 </div>
               </div>
@@ -92,7 +96,7 @@ export const SelectedShoe = ({ results, onReset }: SelectedShoeProps) => {
               onClick={() => setWinnerIndex(results.indexOf(shoe))}
               className="bg-white border border-gray-100 p-6 rounded-3xl flex items-center gap-6 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer hover:scale-[1.03]"
             >
-              <img src={shoe.image} alt={shoe.name} className="w-24 h-24 object-contain object-center flex-shrink-0" />
+              <Image src={shoe.image} alt={`${shoe.brand} ${shoe.name}`} width={96} height={96} className="object-contain shrink-0" />
               <div className="flex-1">
                 <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest">{shoe.brand}</span>
                 <h4 className="text-lg font-bold text-gray-900 leading-tight mb-2">{shoe.name}</h4>

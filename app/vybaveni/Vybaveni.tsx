@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   Route, 
   Mountain, 
@@ -62,6 +62,17 @@ export default function Vybaveni() {
   const [showResults, setShowResults] = useState(false);
   const [allDone, setAllDone] = useState(false);
 
+  // Preload obrázků bot hned jak uživatel dokončí kvíz,
+  // aby se při zobrazení výsledků načetly okamžitě z cache
+  useEffect(() => {
+    if (!allDone) return;
+    const shoes = getRecommendedShoes(selections);
+    shoes.forEach(({ image }) => {
+      const img = new window.Image();
+      img.src = image;
+    });
+  }, [allDone, selections]);
+
   const stepData = STEPS[currentStep];
 
   const handleSelect = (optionId: string) => {
@@ -97,7 +108,7 @@ export default function Vybaveni() {
     <main className="min-h-screen bg-white">
       <div className="max-w-6xl mx-auto pt-12 px-6">
         <div className="flex items-center justify-between mb-8">
-          <div className="w-[120px]" />
+          <div className="w-30" />
 
           <div className="flex space-x-2">
             {STEPS.map((_, index) => (

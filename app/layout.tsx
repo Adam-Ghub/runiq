@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "../app/components/Header"; 
-import Footer from "../app/components/Footer"; 
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -98,7 +98,7 @@ const websiteJsonLd = {
       url: 'https://runiq.me',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://runiq.me/icon.svg',
+        url: 'https://runiq.me/icon.png',
       },
       contactPoint: {
         '@type': 'ContactPoint',
@@ -116,8 +116,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="cs">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased suppressHydrationWarning`}>
+    <html lang="cs" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}

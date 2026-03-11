@@ -32,15 +32,14 @@ export default function Features() {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4">
           {features.map((feature, index) => (
-            <div key={index}> 
-              <FeatureCard 
-                title={feature.title}
-                description={feature.description}
-                linkText={feature.linkText}
-                linkHref={feature.linkHref}
-                Icon={feature.icon}
-              />
-            </div>
+            <FeatureCard 
+              key={index}
+              title={feature.title}
+              description={feature.description}
+              linkText={feature.linkText}
+              linkHref={feature.linkHref}
+              Icon={feature.icon}
+            />
           ))}
         </div>
       </Container>
