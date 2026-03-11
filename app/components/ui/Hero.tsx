@@ -21,7 +21,7 @@ export default function Hero() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0">
             {/* Hlavní tlačítko */}
             <Link 
-              href="/plans" 
+              href="/tepove-zony" 
               className="px-8 py-4 bg-blue text-white font-bold rounded-full transition-all shadow-lg shadow-blue-200 text-center"
             >
               Vypočítat tepové zóny
@@ -29,10 +29,10 @@ export default function Hero() {
 
             {/* Vedlejší tlačítko */}
             <Link 
-              href="/about" 
+              href="/kontakt" 
               className="px-8 py-4 text-blue font-bold rounded-full border border-blue transition-all text-center"
             >
-              Zjistit více
+              Kontaktujte nás
             </Link>
           </div>
         </div>
