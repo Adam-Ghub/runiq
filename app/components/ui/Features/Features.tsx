@@ -10,14 +10,14 @@ const features = [
     linkHref: "/tepove-zony",
     icon: Heart
   },
- /* {
+  {
     title: "Vybavení na běh",
     description: "Doporučíme běžecké boty pro každý povrch. Správné tlumení chrání klouby a předchází zraněním.",
     linkText: "Vybrat boty",
     linkHref: "/vybavení",
     icon: Footprints
   },
-  {
+  /*{
     title: "Tipy",
     description: "Běhejte chytřeji. Praktické tipy pro lepší techniku, rychlejší regeneraci a radost z každého dalšího kilometru",
     linkText: "Zjistit více",

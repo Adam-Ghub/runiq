@@ -3,8 +3,8 @@ import Contact from './_components/Contact'
 import Faq from '../components/ui/Faq/Faq'
 
 export const metadata: Metadata = {
-  title: 'Kontakt | Napište nám',
-  description: 'Máte dotaz ohledně běhání, tepových zón nebo běžeckého vybavení? Rádi vám poradíme s tréninkem i výběrem bot.',
+  title: 'Kontakt',
+  description: 'Máte dotaz ohledně běhání, tepových zón nebo výběru běžeckých bot? Napište nám – rádi poradíme s tréninkem i vybavením pro začátečníky i zkušené běžce.',
   alternates: {
     canonical: 'https://runiq.me/kontakt',
   },

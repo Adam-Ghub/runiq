@@ -24,16 +24,33 @@ const faqData = [
   }
 ];
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqData.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+
 export default function Faq() {
   return (
     <section className="w-full py-20 bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Container className='bg-background'>
         {/* Hlavička sekce */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-black mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-black mb-4 tracking-tight">
             Často kladené otázky
           </h2>
-          <span className="text-lg text-gray max-w-2xl mx-auto">
+          <span className="text-md text-gray max-w-2xl mx-auto">
             Vše, co potřebujete vědět o tréninku, tepových zónách a správném vybavení na běh.
           </span>
         </div>

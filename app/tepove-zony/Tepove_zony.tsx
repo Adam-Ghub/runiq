@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import CalculatorPage from "./_components/Calculator";
 import Zones from "./_components/Zones";
 import Container from "../components/Container";
+import Heading from "../components/Heading";
 
 export default function TepoveZony() {
   const [age, setAge] = useState("25");
@@ -42,8 +43,13 @@ export default function TepoveZony() {
 
   return (
     <main className="bg-background">
-      <section className="h-[800px] flex items-center justify-center relative">
+      <section className="min-h-[800px] flex items-center justify-center relative pt-20">
         <Container className="flex flex-col items-center justify-center w-full">
+          <Heading 
+            title="Vypočítejte si své" 
+            titleHighlight="tepové zóny" 
+            description="Zadejte věk a klidový tep. Kalkulačka tepových zón spočítá vaše tréninkové zóny podle Karvonenovy metody – ideální intenzita pro spalování tuků, vytrvalost i rychlost." 
+          />
           <CalculatorPage 
             age={age} 
             setAge={setAge} 

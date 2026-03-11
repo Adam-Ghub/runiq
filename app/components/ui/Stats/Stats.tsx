@@ -39,10 +39,10 @@ export default function Stats() {
       <Container>
         {/* Nadpisy sekce */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-black mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-black mb-4 tracking-tight">
             Proč se vyplatí vyběhnout?
           </h2>
-          <span className="text-lg text-gray">
+          <span className="text-md text-gray">
             Vědecky podložená fakta, která mění pohled na běhání.
           </span>
         </div>

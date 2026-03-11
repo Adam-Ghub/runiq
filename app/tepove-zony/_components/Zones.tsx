@@ -61,10 +61,10 @@ export default function Zones({ age, restingHR, isMaxHREnabled, maxHROverride }:
   ];
 
   return (
-    <Container className=" mt-24 mb-24 px-6">
+    <Container className="my-20 px-6">
       <div className="mb-16 text-center">
-        <h2 className="text-5xl font-bold text-black mb-4 tracking-tight">Vaše tréninkové zóny</h2>
-        <p className="mt-6 text-base md:text-lg text-gray-600 max-w-2xl mx-auto  leading-relaxed">Spočítejte si zóny pro běžecký trénink. Zjistěte svou maximální tepovou frekvenci a v jakém tempu probíhá nejefektivnější hubnutí běháním.</p>
+        <h2 className="text-4xl font-bold text-black mb-4 tracking-tight">Vaše tepové zóny pro běh</h2>
+        <p className="mt-6 text-base md:text-md text-gray-600 max-w-2xl mx-auto  leading-relaxed">Výpočet tepových zón pro běhání. Zjistěte svůj cílový tep pro spalování tuků (zóna 2), aerobní zónu i anaerobní práh.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
