@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Vybaveni from './Vybaveni'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Výběr běžeckých bot – Kvíz na míru | Runiq' },
+  title: { absolute: 'Výběr běžeckých bot – Kvíz na míru' },
   description: 'Nevíte jaké boty na běh vybrat? Odpovězte na 3 otázky a náš kvíz vám doporučí ideální běžecké boty přesně pro váš styl, povrch a cíle. Zdarma.',
   keywords: [
     'výběr běžeckých bot', 'jaké boty na běh', 'kvíz běžecké boty', 'nejlepší běžecké boty',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     canonical: 'https://runiq.me/vybaveni',
   },
   openGraph: {
-    title: 'Výběr běžeckých bot – Kvíz na míru | Runiq',
+    title: 'Výběr běžeckých bot – Kvíz na míru',
     description: 'Odpovězte na 3 otázky a zjistěte, jaké boty jsou ideální přesně pro váš styl běhu. Boty na silnici, trail i závodní karbonové modely.',
     url: 'https://runiq.me/vybaveni',
     type: 'website',

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://runiq.me'),
   title: {
     default: 'Průvodce světem běhání | Tepové zóny, Vybavení, Tipy',
-    template: '%s | Runiq'
+    template: '%s'
   },
   description: 'Průvodce světem běhání. Kalkulačka tepových zón online, výběr běžeckých bot jednoduše a tipy jak začít běhat.',
   keywords: [

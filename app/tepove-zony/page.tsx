@@ -18,7 +18,7 @@ const calculatorJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: { absolute: 'Kalkulačka tepových zón zdarma | Výpočet online | Runiq' },
+  title: { absolute: 'Kalkulačka tepových zón zdarma | Výpočet online' },
   description: 'Vypočítejte si tepové zóny pro běh zdarma pomocí Karvonenovy metody. Zjistěte ideální intenzitu tréninku pro spalování tuků v zóně 2, vytrvalost i výkon. Online kalkulačka.',
   keywords: [
     'kalkulačka tepových zón', 'výpočet tepových zón', 'tepové zóny online zdarma',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     canonical: 'https://runiq.me/tepove-zony',
   },
   openGraph: {
-    title: 'Kalkulačka tepových zón zdarma | Výpočet online | Runiq',
+    title: 'Kalkulačka tepových zón zdarma | Výpočet online',
     description: 'Vypočítejte si tepové zóny pro běh online zdarma. Karvonen metoda – ideální intenzita pro spalování tuků, vytrvalost a výkon.',
     url: 'https://runiq.me/tepove-zony',
     type: 'website',

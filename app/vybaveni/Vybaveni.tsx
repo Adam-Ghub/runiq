@@ -12,7 +12,9 @@ import {
   Expand, 
   Target, 
   ArrowLeft,
-  CheckCircle2
+  CheckCircle2,
+  Banknote,
+  Wallet
 } from 'lucide-react';
 
 // --- IMPORTY TVÝCH KOMPONENT ---
@@ -45,14 +47,20 @@ const STEPS = [
   },
   {
     id: 3,
-    key: 'fit',
-    title: 'Co tvoje chodidlo potřebuje?',
-    description: 'Pohodlí je nejdůležitější faktor pro zdravý běh.',
-    options: [
-      { id: 'standard', title: 'Standardní střih', benefits: ['Klasické pevné obepnutí', 'Jistota v technickém terénu'], icon: <Footprints /> },
-      { id: 'wide', title: 'Široká špička', benefits: ['Přirozený prostor pro prsty', 'Prevence otlaků a puchýřů'], icon: <Expand /> },
-      { id: 'stability', title: 'Podpora a stabilita', benefits: ['Korekce pronace (šlapání dovnitř)', 'Pevnější vnitřní hrana'], icon: <Target /> },
-    ]
+    key: 'price',
+    title: 'Jaký je tvůj rozpočet?',
+    description: 'Kvalitní boty jsou investicí do tvého zdraví a radosti z pohybu.',
+   options: [
+  { 
+    id: 'budget', title: '2 000 – 4 000 Kč', benefits: ['Ideální volba pro začátečníky', 'Skvělý poměr ceny a výkonu'], icon: <Wallet /> 
+  },
+  { 
+    id: 'midrange', title: '4 000 – 6 000 Kč', benefits: ['Pokročilé technologie a tlumení', 'Vhodné pro pravidelný trénink'], icon: <Banknote /> 
+  },
+  { 
+    id: 'premium', title: '6 000 Kč a více', benefits: ['Karbonové pláty a nízká váha', 'Maximální výkon pro rekordy'], icon: <Zap /> 
+  },
+]
   }
 ];
 
@@ -62,8 +70,6 @@ export default function Vybaveni() {
   const [showResults, setShowResults] = useState(false);
   const [allDone, setAllDone] = useState(false);
 
-  // Preload obrázků bot hned jak uživatel dokončí kvíz,
-  // aby se při zobrazení výsledků načetly okamžitě z cache
   useEffect(() => {
     if (!allDone) return;
     const shoes = getRecommendedShoes(selections);
