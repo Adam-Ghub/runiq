@@ -14,7 +14,7 @@ const features = [
     title: "Vybavení na běh",
     description: "Doporučíme běžecké boty pro každý povrch. Správné tlumení chrání klouby a předchází zraněním.",
     linkText: "Vybrat boty",
-    linkHref: "/vybavení",
+    linkHref: "/vybaveni",
     icon: Footprints
   },
   /*{
