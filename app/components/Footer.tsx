@@ -42,14 +42,14 @@ export default function Footer() {
         <div className="flex items-center flex-row max-[500px]:flex-col justify-between gap-12">
           {/* Levá strana: Logo a Popis */}
           <div className="">
-            <div className="flex items-center gap-2 mb-4">
+            <Link href="/" className="flex items-center gap-2 mb-4">
               <Icon
                 iconNode={sneaker}
                 className="w-6 h-6 text-blue"
                 strokeWidth={2.5}
               />
               <span className="text-xl font-bold text-black tracking-tight">Runiq</span>
-            </div>
+            </Link>
             <p className="text-gray-500 leading-relaxed text-sm">
               V běhání se s námi neztratíte. Ukážeme vám, <br /> že <span className='font-black text-blue'>začít je jednodušší, než si myslíte!</span>
             </p>
