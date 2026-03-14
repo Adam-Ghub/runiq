@@ -17,27 +17,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://runiq.me'),
   title: {
-    default: 'Runiq – Průvodce světem běhání | Tepové zóny, Boty, Tipy',
+    default: 'Průvodce světem běhání | Tepové zóny, Vybavení, Tipy',
     template: '%s | Runiq'
   },
-  description: 'Runiq – váš bezplatný průvodce běháním v češtině. Kalkulačka tepových zón online, výběr běžeckých bot pomocí kvízu a tipy jak začít běhat. Zlepšete kondici a spalujte tuky efektivněji.',
+  description: 'Průvodce světem běhání. Kalkulačka tepových zón online, výběr běžeckých bot jednoduše a tipy jak začít běhat.',
   keywords: [
-    // Hlavní brand + obecné
     'Runiq', 'běhání', 'běh',
-    // Kalkulačka tepových zón – vysoký záměr
     'kalkulačka tepových zón', 'tepové zóny', 'výpočet tepových zón', 'tepové zóny zdarma',
     'tepové zóny online', 'karvonen vzorec', 'karvonen metoda', 'maximální tepová frekvence',
     'klidový tep', 'tepová frekvence výpočet', 'aerobní zóna', 'anaerobní práh',
-    // Zóna 2 – aktuálně trendové téma
     'zóna 2 trénink', 'zone 2 běh', 'zóna 2 spalování tuků',
-    // Boty – komerce
     'běžecké boty', 'výběr běžeckých bot', 'jaké boty na běh', 'nejlepší běžecké boty',
     'boty na trail', 'trailové boty', 'boty na asfalt',
-    // Začátečníci – vysoký objem
     'jak začít běhat', 'běh pro začátečníky', 'začít běhat',
-    // Hubnutí – vysoký objem
     'hubnutí běháním', 'spalování tuků běh', 'jak zhubnout běháním',
-    // Trénink
     'běžecký trénink', 'tréninkový plán běh', 'intervalový trénink', 'kardio trénink',
     'regenerace po běhu', 'kondice',
   ],

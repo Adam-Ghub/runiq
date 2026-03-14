@@ -17,7 +17,7 @@ export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="w-full bg-white border-b border-gray-100">
+        <header className="w-full bg-white border-2 border-gray-100">
             <Container >
                 <div className="flex items-center justify-between h-16">
                     {/* Logo sekce */}
@@ -31,7 +31,7 @@ export default function Header() {
                     </Link>
 
                     {/* Navigace pro desktop */}
-                    <nav className="hidden md:flex items-center gap-8">
+                    <nav className="flex items-center gap-8 max-md:hidden">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.label}

@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 interface ContainerProps {
   children: ReactNode;
-  className?: string; // Umožní ti přidat extra třídy, pokud bude potřeba
+  className?: string; 
 }
 
 export default function Container({ children, className = "" }: ContainerProps) {

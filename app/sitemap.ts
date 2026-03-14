@@ -17,8 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://runiq.me/vybaveni",
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: "https://runiq.me/kontakt",
