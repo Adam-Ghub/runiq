@@ -30,7 +30,7 @@ export default function Features() {
   return (
     <section className="py-20 bg-background">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4">
+        <div className="grid grid-cols-3 max-md:grid-cols-1 gap-4 max-md:gap-6">
           {features.map((feature, index) => (
             <FeatureCard 
               key={index}

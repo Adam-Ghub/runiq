@@ -47,7 +47,7 @@ export default function Faq() {
       <Container className='bg-background'>
         {/* Hlavička sekce */}
         <div className="text-center mb-16">
-          <h2 className="md:text-4xl font-extrabold text-black mb-4 tracking-tight">
+          <h2 className="text-4xl font-extrabold text-black mb-4 tracking-tight">
             Často kladené otázky
           </h2>
           <span className="text-md text-gray max-w-2xl mx-auto">

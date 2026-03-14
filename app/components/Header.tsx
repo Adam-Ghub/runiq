@@ -48,7 +48,7 @@ export default function Header() {
                     {/* Hamburger menu tlačítko */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                        className="hidden max-md:block p-2 rounded-lg hover:bg-gray-100 transition-colors"
                         aria-label="Toggle menu"
                     >
                         {isOpen ? (
@@ -61,7 +61,7 @@ export default function Header() {
 
                 {/* Mobilní menu*/}
                 {isOpen && (
-                    <div className="md:hidden absolute right-4 top-16 bg-white border border-gray-100 rounded-xl shadow-xl z-50 min-w-35 overflow-hidden mt-2">
+                    <div className="hidden max-md:block absolute right-4 top-16 bg-white border border-gray-100 rounded-xl shadow-xl z-50 min-w-35 overflow-hidden mt-2">
                         <nav className="flex flex-col p-2">
                             {navLinks.map((link) => (
                                 <Link

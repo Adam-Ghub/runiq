@@ -4,7 +4,7 @@ import Heading from '../Heading';
 
 export default function Hero() {
   return (
-    <section className="bg-white h-150 flex py-16 md:py-12">
+    <section className="bg-white h-150 flex py-12 max-md:py-16">
       <Container className='flex items-center justify-center'>
         <div className="flex flex-col items-center text-center">
           <Heading
@@ -14,7 +14,7 @@ export default function Hero() {
           />
 
           {/* Tlačítka */}
-          <div className="mt-4 flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0">
+          <div className="mt-4 flex flex-row max-sm:flex-col gap-4 w-auto max-sm:w-full px-0 max-sm:px-4">
             {/* Hlavní tlačítko */}
             <Link 
               href="/tepove-zony" 

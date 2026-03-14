@@ -142,7 +142,7 @@ export default function Vybaveni() {
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">{stepData.description}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-20">
+        <div className="grid grid-cols-3 max-md:grid-cols-1 gap-8 pb-20">
           {allDone ? (
             <div className="col-span-3 flex flex-col items-center justify-center py-16 gap-6 animate-in fade-in duration-500">
               <div className="flex items-center gap-3 text-green-600">

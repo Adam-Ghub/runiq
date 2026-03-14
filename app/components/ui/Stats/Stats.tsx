@@ -35,7 +35,7 @@ export default function Stats() {
       <Container>
         {/* Nadpisy sekce */}
         <div className="text-center mb-16">
-          <h2 className="md:text-4xl font-extrabold text-black mb-4 tracking-tight">
+          <h2 className="text-4xl font-extrabold text-black mb-4 tracking-tight">
             Proč se vyplatí vyběhnout?
           </h2>
           <span className="text-md text-gray">
@@ -44,7 +44,7 @@ export default function Stats() {
         </div>
 
         {/* Flex kontejner pro karty */}
-        <div className="flex flex-col md:flex-row items-start justify-between gap-12 md:gap-6">
+        <div className="flex flex-row max-md:flex-col items-start justify-between gap-6 max-md:gap-12">
           {statsData.map((item, index) => (
             <div key={index} className="flex-1 w-full">
               <StatCard 

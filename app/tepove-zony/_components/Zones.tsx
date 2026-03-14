@@ -64,10 +64,10 @@ export default function Zones({ age, restingHR, isMaxHREnabled, maxHROverride }:
     <Container className="my-20 px-6">
       <div className="mb-16 text-center">
         <h2 className="text-4xl font-bold text-black mb-4 tracking-tight">Vaše tepové zóny pro běh</h2>
-        <p className="mt-6 text-base md:text-md text-gray-600 max-w-2xl mx-auto  leading-relaxed">Výpočet tepových zón pro běhání. Zjistěte svůj cílový tep pro spalování tuků (zóna 2), aerobní zónu i anaerobní práh.</p>
+        <p className="mt-6 text-md max-md:text-base text-gray-600 max-w-2xl mx-auto  leading-relaxed">Výpočet tepových zón pro běhání. Zjistěte svůj cílový tep pro spalování tuků (zóna 2), aerobní zónu i anaerobní práh.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+      <div className="grid grid-cols-5 max-lg:grid-cols-3 max-md:grid-cols-1 gap-8">
         {zonesData.map((zone) => (
           <div key={zone.id} className="relative bg-foreground rounded-4xl p-10 border-4 border-gray/10 flex flex-col transition-all hover:shadow-xl">
             <div className={`w-18 h-18 rounded-full border-3 ${zone.circleBorder} flex items-center justify-center mx-auto mb-8`}>

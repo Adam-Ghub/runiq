@@ -27,15 +27,15 @@ export const SelectedShoe = ({ results, onReset }: SelectedShoeProps) => {
           <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">Tvoje nejlepší shoda</span>
         </div>
 
-        <div className="bg-white rounded-[2.5rem] border-2 border-blue-600 p-8 md:p-12 shadow-2xl shadow-blue-100 relative overflow-hidden">
+        <div className="bg-white rounded-[2.5rem] border-2 border-blue-600 p-12 max-md:p-8 shadow-2xl shadow-blue-100 relative overflow-hidden">
           {/* Match Score Badge */}
           <div className="absolute top-0 right-0 bg-blue-600 text-white px-10 py-4 rounded-bl-4xl font-black text-2xl">
             {winner.matchScore}%
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-12 items-center">
             {/* OBRÁZEK */}
-            <div className="relative h-105 rounded-3xl overflow-hidden">
+            <div className="relative h-105 rounded-3xl overflow-hidden max-lg:mt-16">
               <Image
                 src={winner.image}
                 alt={`${winner.brand} ${winner.name}`}
@@ -89,7 +89,7 @@ export const SelectedShoe = ({ results, onReset }: SelectedShoeProps) => {
 
       {/* ALTERNATIVNÍ MOŽNOSTI (Menší karty) */}
       {alternatives.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-2 max-md:grid-cols-1 gap-6 mb-12">
           {alternatives.map(shoe => (
             <div
               key={shoe.id}

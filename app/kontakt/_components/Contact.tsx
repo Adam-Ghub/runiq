@@ -10,16 +10,16 @@ const Contact = () => {
           <h1 className="text-4xl font-bold text-black mb-4">
             Napište nám zprávu
           </h1>
-          <p className="text-gray text-lg md:text-md">
+          <p className="text-gray text-md max-md:text-lg">
             Máte dotaz nebo připomínku? Rádi vám odpovíme.
           </p>
         </div>
 
         {/* Main Contact Card */}
-        <div className="bg-foreground lg:max-w-5xl rounded-3xl shadow-sm border border-slate-100 overflow-hidden flex flex-col md:flex-row">
+        <div className="bg-foreground lg:max-w-5xl rounded-3xl shadow-sm border border-slate-100 overflow-hidden flex flex-row max-md:flex-col">
           
           {/* Left Side - Form */}
-          <div className="flex flex-col w-full md:w-1/2 p-12 border-b md:border-b-0 md:border-r border-slate-100">
+          <div className="flex flex-col w-1/2 max-md:w-full p-12 border-r max-md:border-r-0 max-md:border-b border-slate-100">
             <div className="flex items-center gap-3 mb-8">
               <div className="bg-blue/10 p-2 rounded-lg">
                 <Mail className="w-5 h-5 text-blue" />
@@ -28,7 +28,7 @@ const Contact = () => {
             </div>
 
             <form className="space-y-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-black">Vaše jméno a příjmení</label>
                   <input 
@@ -63,7 +63,7 @@ const Contact = () => {
           </div>
 
           {/* Right Side - Contact info */}
-          <div className="flex justify-center flex-col w-full md:w-1/2 p-12 bg-slate-50/30">
+          <div className="flex justify-center flex-col w-1/2 max-md:w-full p-12 bg-slate-50/30">
             <div className="flex items-center gap-3 mb-8">
               <div className="bg-blue/10 p-2 rounded-lg">
                 <MapPin className="w-5 h-5 text-blue" />

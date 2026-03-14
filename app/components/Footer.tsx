@@ -26,7 +26,7 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-100 pt-16 pb-8">
       <Container>
-        <div className="flex items-center flex-col md:flex-row justify-between gap-12 mb-12">
+        <div className="flex items-center flex-row max-md:flex-col justify-between gap-12 mb-12">
           {/* Levá strana: Logo a Popis */}
           <div className="max-w-xs">
             <div className="flex items-center gap-2 mb-4">
@@ -43,7 +43,7 @@ export default function Footer() {
           </div>
 
           {/* Pravá strana: Sloupce s odkazy */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 gap-8 md:gap-20">
+          <div className="grid grid-cols-2 gap-20 max-md:gap-8">
             {footerLinks.map((section) => (
               <div key={section.title}>
                 <h4 className="font-bold text-black mb-4">{section.title}</h4>
