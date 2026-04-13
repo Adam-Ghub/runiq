@@ -24,7 +24,7 @@ export default function Zones({ age, restingHR, isMaxHREnabled, maxHROverride }:
       max: calculateBPM(0.50), 
       desc: "Velmi lehký pohyb, chůze nebo protažení.",
       benefits: ["Aktivní regenerace", "Snížení stresu", "Zlepšení prokrvení"],
-      color: "text-emerald-500", circleBorder: "border-emerald-500", bgColor: "bg-emerald-500"
+      color: "text-[#118844]", circleBorder: "border-[#118844]", bgColor: "bg-[#118844]"
     },
     {
       id: "Z2", name: "Vytrvalost", 

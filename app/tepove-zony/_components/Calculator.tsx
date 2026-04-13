@@ -32,6 +32,7 @@ export default function CalculatorPage({
       <div className="flex items-center justify-center gap-5 mb-8 group">
         <button
           type="button"
+          aria-label="Tlačítko pro zapnutí/vypnutí zadávání maximálního tepu"
           onClick={() => setIsMaxHREnabled(!isMaxHREnabled)}
           className={`relative inline-flex h-9 w-16 items-center rounded-2xl transition-all duration-200 focus:outline-none border-2 transform hover:scale-[1.03] active:scale-95 ${
             isMaxHREnabled 
@@ -55,10 +56,11 @@ export default function CalculatorPage({
 
       <div className="grid grid-cols-2 gap-6 mb-10">
         <div className="flex flex-col gap-3">
-          <label className="text-sm font-bold text-gray tracking-[2px] ml-2 uppercase">
+          <label htmlFor='age-input' className="text-sm font-bold text-gray tracking-[2px] ml-2 uppercase">
             {isMaxHREnabled ? 'Max. tep' : 'Věk'}
           </label>
           <input
+          id='age-input'
             type="number"
             value={isMaxHREnabled ? maxHRInput : age}
             onChange={(e) => isMaxHREnabled ? setMaxHRInput(e.target.value) : setAge(e.target.value)}
@@ -69,7 +71,7 @@ export default function CalculatorPage({
 
         <div className="flex flex-col gap-3 relative">
           <div className="flex items-center gap-2 ml-2">
-            <label className="text-sm font-bold text-gray tracking-[2px] uppercase">
+            <label  htmlFor='resting-hr-input' className="text-sm font-bold text-gray tracking-[2px] uppercase">
               Klidový tep
             </label>
             
@@ -94,6 +96,7 @@ export default function CalculatorPage({
           </div>
 
           <input
+          id='resting-hr-input'
             type="number"
             value={restingHR}
             onChange={(e) => setRestingHR(e.target.value)}
