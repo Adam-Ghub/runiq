@@ -8,6 +8,7 @@ import { SlideData } from './data';
 interface HeroSlideProps {
   slide: SlideData;
   direction: number;
+  isFirst?: boolean;
 }
 
 const variants = {
@@ -25,7 +26,7 @@ const variants = {
   }),
 };
 
-export default function HeroSlide({ slide, direction }: HeroSlideProps) {
+export default function HeroSlide({ slide, direction, isFirst = false }: HeroSlideProps) {
   return (
     <motion.div
       key={slide.id}
@@ -42,7 +43,7 @@ export default function HeroSlide({ slide, direction }: HeroSlideProps) {
         src={slide.image}
         alt={slide.imageAlt}
         fill
-        priority
+        priority={isFirst}
         className="object-cover"
         sizes="100vw"
       />

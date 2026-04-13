@@ -41,6 +41,7 @@ export default function HeroCarousel() {
           key={slides[current].id}
           slide={slides[current]}
           direction={direction}
+          isFirst={slides[current].id === slides[0].id}
         />
       </AnimatePresence>
 
