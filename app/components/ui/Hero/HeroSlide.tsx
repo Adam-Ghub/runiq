@@ -48,16 +48,16 @@ export default function HeroSlide({ slide, direction }: HeroSlideProps) {
       />
 
       {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/20" />
+      <div className="absolute inset-0 bg-black/30" />
 
       {/* Content */}
-      <div className="relative h-full flex items-center">
-        <div className="max-w-[1600px] mx-auto px-8 max-lg:px-6 max-sm:px-4 w-full">
+      <div className="relative h-full flex items-center justify-center">
+        <div className="max-w-[1600px] mx-auto px-20 max-lg:px-16 max-sm:px-14 w-full flex justify-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="max-w-xl max-sm:max-w-full"
+            className="max-w-2xl w-full p-8 max-sm:p-6 rounded-3xl bg-black/20 backdrop-blur-md border border-white/15 text-center"
           >
             <h1 className="text-5xl max-lg:text-4xl max-sm:text-3xl font-extrabold text-white tracking-tight leading-[1.15]">
               {slide.title}
@@ -65,14 +65,14 @@ export default function HeroSlide({ slide, direction }: HeroSlideProps) {
               <span className="text-blue">{slide.titleHighlight}</span>
             </h1>
 
-            <p className="mt-6 max-sm:mt-4 text-base max-sm:text-sm text-white/80 leading-relaxed max-w-lg">
+            <p className="mt-6 max-sm:mt-4 text-lg max-sm:text-base text-white leading-relaxed mx-auto max-w-xl">
               {slide.description}
             </p>
 
             <div className="mt-8 max-sm:mt-6">
               <Link
                 href={slide.ctaHref}
-                className="inline-block px-8 max-sm:px-6 py-4 max-sm:py-3 bg-blue text-white font-bold rounded-full shadow-lg shadow-blue-900/40 transition-all hover:brightness-110 active:scale-95 text-sm"
+                className="inline-block px-10 max-sm:px-8 py-4 max-sm:py-3 bg-blue text-white font-bold rounded-full shadow-lg shadow-blue-900/40 transition-all hover:brightness-110 active:scale-95 text-base max-sm:text-sm"
               >
                 {slide.ctaText}
               </Link>

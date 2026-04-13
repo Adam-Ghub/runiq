@@ -77,11 +77,6 @@ export default function HeroCarousel() {
           />
         ))}
       </div>
-
-      {/* Slide counter */}
-      <div className="absolute bottom-8 max-sm:bottom-5 right-8 max-sm:right-4 z-10 text-white/60 text-sm font-medium tabular-nums">
-        {String(current + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
-      </div>
     </section>
   );
 }

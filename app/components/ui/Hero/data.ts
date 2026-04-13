@@ -12,7 +12,7 @@ export interface SlideData {
 export const slides: SlideData[] = [
   {
     id: 1,
-    image: '/hero/hero-tepove-zony.jpg',
+    image: '/hero/test.jpg',
     imageAlt: 'Běžec trénující v přírodě – kalkulačka tepových zón',
     title: 'Trénujte ve správné',
     titleHighlight: 'intenzitě',
@@ -23,7 +23,7 @@ export const slides: SlideData[] = [
   },
   {
     id: 2,
-    image: '/hero/hero-vybaveni.jpg',
+    image: '/hero/test.jpg',
     imageAlt: 'Výběr běžeckých bot – kvíz na míru',
     title: 'Boty přesně pro',
     titleHighlight: 'váš běh',
@@ -34,7 +34,7 @@ export const slides: SlideData[] = [
   },
   {
     id: 3,
-    image: '/hero/hero-galerie.jpg',
+    image: '/hero/test.jpg',
     imageAlt: 'Galerie běžeckého vybavení – boty a doplňky',
     title: 'Prohlédněte si naše',
     titleHighlight: 'vybavení',

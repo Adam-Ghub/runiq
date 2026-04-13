@@ -44,7 +44,7 @@ The project uses standard npm scripts:
 - **Styling:**
   - Prefer Tailwind CSS v4 utility classes.
   - Global styles are located in `app/globals.css`.
-  - Custom colors (like `blue`, `foreground`, `gray`) are likely defined in the Tailwind configuration or `globals.css`.
+  - Custom colors and themes are managed via Tailwind v4's new CSS-first configuration.
 - **Naming Conventions:**
   - Files typically use `PascalCase` for components (e.g., `Container.tsx`) and `lowercase` or `kebab-case` for directory routes.
   - Directory-specific components are kept in `_components` to keep the route structure clean.
