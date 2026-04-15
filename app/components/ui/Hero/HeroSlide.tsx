@@ -13,15 +13,12 @@ interface HeroSlideProps {
 const variants = {
   enter: (direction: number) => ({
     x: direction > 0 ? '100%' : '-100%',
-    opacity: 0,
   }),
   center: {
     x: 0,
-    opacity: 1,
   },
   exit: (direction: number) => ({
     x: direction > 0 ? '-100%' : '100%',
-    opacity: 0,
   }),
 };
 
@@ -48,7 +45,7 @@ export default function HeroSlide({ slide, direction }: HeroSlideProps) {
       />
 
       {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-black/50" />
 
       {/* Content */}
       <div className="relative h-full flex items-center justify-center">

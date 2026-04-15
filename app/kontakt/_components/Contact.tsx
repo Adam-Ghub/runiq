@@ -60,8 +60,9 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-semibold pl-2 text-black">Vaše jméno a příjmení</label>
+                  <label htmlFor="contact-name" className="text-sm font-semibold pl-2 text-black cursor-pointer">Vaše jméno a příjmení</label>
                   <input
+                    id="contact-name"
                     type="text"
                     placeholder="Jan Novák"
                     value={name}
@@ -70,8 +71,9 @@ const Contact = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-semibold pl-2 text-black">Váš e-mail</label>
+                  <label htmlFor="contact-email" className="text-sm font-semibold pl-2 text-black cursor-pointer">Váš e-mail</label>
                   <input
+                    id="contact-email"
                     type="email"
                     placeholder="name@email.cz"
                     value={email}
@@ -82,8 +84,9 @@ const Contact = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-semibold pl-2 text-black">Vaše zpráva</label>
+                <label htmlFor="contact-message" className="text-sm font-semibold pl-2 text-black cursor-pointer">Vaše zpráva</label>
                 <textarea
+                  id="contact-message"
                   rows={3}
                   placeholder="Jak vám můžeme pomoci?"
                   value={message}

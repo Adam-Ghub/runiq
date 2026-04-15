@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Pointer } from 'lucide-react';
 import HeroSlide from './HeroSlide';
 import { slides } from './data';
 
@@ -32,7 +32,7 @@ export default function HeroCarousel() {
 
   return (
     <section
-      className="relative w-full h-screen min-h-[480px] max-h-[900px] overflow-hidden"
+      className="relative w-full h-screen min-h-[480px] max-h-[900px] overflow-hidden bg-black"
       aria-label="Hero carousel"
     >
       {/* Slides */}
@@ -62,17 +62,15 @@ export default function HeroCarousel() {
         <ChevronRight className="w-6 h-6 max-sm:w-5 max-sm:h-5" strokeWidth={2.5} />
       </button>
 
-      {/* Dot indicators */}
+        {/* Pagination dots */}
       <div className="absolute bottom-8 max-sm:bottom-5 left-1/2 -translate-x-1/2 z-10 flex gap-2.5">
         {slides.map((slide, index) => (
-          <button
+          <span
             key={slide.id}
-            onClick={() => goTo(index)}
-            aria-label={`Přejít na slide ${index + 1}`}
             className={`transition-all duration-300 rounded-full ${
               index === current
                 ? 'bg-white w-8 h-2.5 max-sm:w-6 max-sm:h-2'
-                : 'bg-white/50 w-2.5 h-2.5 max-sm:w-2 max-sm:h-2 hover:bg-white/75'
+                : 'bg-white/50 w-2.5 h-2.5 max-sm:w-2 max-sm:h-2'
             }`}
           />
         ))}

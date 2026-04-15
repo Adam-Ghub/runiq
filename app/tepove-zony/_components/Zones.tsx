@@ -75,7 +75,7 @@ export default function Zones({ age, restingHR, isMaxHREnabled, maxHROverride }:
             </div>
             <div className="text-center mb-8">
               <h3 className="font-bold text-black text-2xl mb-1">{zone.name}</h3>
-              <p className={`font-black text-xl ${zone.color}`}>{zone.min}-{zone.max} BPM</p>
+              <span className={`font-black text-xl ${zone.color}`}>{zone.min}-{zone.max} BPM</span>
             </div>
             <p className="text-gray text-sm text-center mb-10 leading-relaxed min-h-12">{zone.desc}</p>
             <div className="mb-10 grow">

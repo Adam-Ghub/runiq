@@ -74,9 +74,10 @@ export default function Footer() {
 
             {/* Máte dotaz? */}
             <div className="flex flex-col justify-center flex-1">
-              <h4 className="font-bold text-black mb-2 pl-2">Máte dotaz?</h4>
+              <label htmlFor="textarea-ve-footeru-pro-dotaz" className="font-bold text-black mb-2 pl-2 cursor-pointer block">Máte dotaz?</label>
               <div className="flex items-center gap-2 w-full">
                 <textarea
+                  id="textarea-ve-footeru-pro-dotaz"
                   rows={1}
                   placeholder="Napište nám..."
                   value={message}
