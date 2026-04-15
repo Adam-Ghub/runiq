@@ -40,6 +40,7 @@ export default function HeroSlide({ slide, direction }: HeroSlideProps) {
         alt={slide.imageAlt}
         fill
         priority
+        fetchPriority="high"
         className="object-cover"
         sizes="100vw"
       />

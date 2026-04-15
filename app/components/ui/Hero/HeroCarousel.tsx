@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Pointer } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import HeroSlide from './HeroSlide';
 import { slides } from './data';
 
@@ -24,6 +24,13 @@ export default function HeroCarousel() {
     const timer = setInterval(() => paginate(1), 6000);
     return () => clearInterval(timer);
   }, [paginate]);
+
+  // Preload next slide image
+  useEffect(() => {
+    const nextIndex = (current + 1) % slides.length;
+    const img = new Image();
+    img.src = slides[nextIndex].image;
+  }, [current]);
 
   const goTo = (index: number) => {
     const dir = index > current ? 1 : -1;
@@ -48,7 +55,7 @@ export default function HeroCarousel() {
       <button
         onClick={() => paginate(-1)}
         aria-label="Předchozí slide"
-        className="absolute left-4 max-sm:left-2 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-12 h-12 max-sm:w-10 max-sm:h-10 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-white transition-all hover:bg-white/30 active:scale-90"
+        className="absolute left-4 max-sm:left-2 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-12 h-12 max-sm:w-10 max-sm:h-10 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-white transition-all hover:bg-white/30 active:scale-90 cursor-pointer"
       >
         <ChevronLeft className="w-6 h-6 max-sm:w-5 max-sm:h-5" strokeWidth={2.5} />
       </button>
@@ -57,7 +64,7 @@ export default function HeroCarousel() {
       <button
         onClick={() => paginate(1)}
         aria-label="Následující slide"
-        className="absolute right-4 max-sm:right-2 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-12 h-12 max-sm:w-10 max-sm:h-10 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-white transition-all hover:bg-white/30 active:scale-90"
+        className="absolute right-4 max-sm:right-2 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-12 h-12 max-sm:w-10 max-sm:h-10 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-white transition-all hover:bg-white/30 active:scale-90 cursor-pointer"
       >
         <ChevronRight className="w-6 h-6 max-sm:w-5 max-sm:h-5" strokeWidth={2.5} />
       </button>

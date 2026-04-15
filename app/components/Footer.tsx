@@ -57,7 +57,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-10 w-full max-w-lg justify-end flex-col sm:flex-row">
             <div className="w-auto sm:pr-10 max-3xl:pr-0">
-              <h4 className="font-bold text-black mb-4">Průvodce</h4>
+              <h3 className="font-bold text-black mb-4">Průvodce</h3>
               <ul className="space-y-3">
                 {pruvodceLinks.map((link) => (
                   <li key={link.label}>
