@@ -112,7 +112,23 @@ export default function RootLayout({
   return (
     <html lang="cs" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <link rel="preload" as="image" href="/hero/Carousel_3.webp" fetchPriority="high" />
+        {/* Responsive preload: mobile gets the small 38 KB image, desktop the full 1920 px one */}
+        <link
+          rel="preload"
+          as="image"
+          href="/hero/Carousel_3_mobile.webp"
+          type="image/webp"
+          media="(max-width: 768px)"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/hero/Carousel_3.webp"
+          type="image/webp"
+          media="(min-width: 769px)"
+          fetchPriority="high"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}

@@ -8,9 +8,11 @@ import { slides } from './data';
 
 export default function HeroCarousel() {
   const [[current, direction], setCurrent] = useState([0, 0]);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   const paginate = useCallback(
     (newDirection: number) => {
+      setHasInteracted(true);
       setCurrent(([prev]) => {
         const next = (prev + newDirection + slides.length) % slides.length;
         return [next, newDirection];
@@ -30,9 +32,14 @@ export default function HeroCarousel() {
     const nextIndex = (current + 1) % slides.length;
     const img = new Image();
     img.src = slides[nextIndex].image;
+
+    // Also preload the mobile variant
+    const mobileImg = new Image();
+    mobileImg.src = slides[nextIndex].mobileImage;
   }, [current]);
 
   const goTo = (index: number) => {
+    setHasInteracted(true);
     const dir = index > current ? 1 : -1;
     setCurrent([index, dir]);
   };
@@ -48,6 +55,7 @@ export default function HeroCarousel() {
           key={slides[current].id}
           slide={slides[current]}
           direction={direction}
+          isFirst={!hasInteracted && current === 0}
         />
       </AnimatePresence>
 

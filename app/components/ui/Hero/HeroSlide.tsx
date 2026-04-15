@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { SlideData } from './data';
@@ -8,6 +7,7 @@ import { SlideData } from './data';
 interface HeroSlideProps {
   slide: SlideData;
   direction: number;
+  isFirst?: boolean;
 }
 
 const variants = {
@@ -22,7 +22,7 @@ const variants = {
   }),
 };
 
-export default function HeroSlide({ slide, direction }: HeroSlideProps) {
+export default function HeroSlide({ slide, direction, isFirst }: HeroSlideProps) {
   return (
     <motion.div
       key={slide.id}
@@ -34,16 +34,27 @@ export default function HeroSlide({ slide, direction }: HeroSlideProps) {
       transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
       className="absolute inset-0"
     >
-      {/* Background image */}
-      <Image
-        src={slide.image}
-        alt={slide.imageAlt}
-        fill
-        priority
-        fetchPriority="high"
-        className="object-cover"
-        sizes="100vw"
-      />
+      {/* Background image using <picture> for responsive mobile/desktop sources */}
+      <picture>
+        <source
+          media="(max-width: 768px)"
+          srcSet={slide.mobileImage}
+          type="image/webp"
+        />
+        <img
+          src={slide.image}
+          alt={slide.imageAlt}
+          fetchPriority={isFirst ? 'high' : 'auto'}
+          loading={isFirst ? 'eager' : 'lazy'}
+          decoding={isFirst ? 'sync' : 'async'}
+          className="absolute inset-0 w-full h-full object-cover"
+          style={slide.blurDataURL ? {
+            backgroundImage: `url(${slide.blurDataURL})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          } : undefined}
+        />
+      </picture>
 
       {/* Dark gradient overlay */}
       <div className="absolute inset-0 bg-black/50" />
