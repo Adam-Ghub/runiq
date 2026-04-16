@@ -55,8 +55,8 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex items-center gap-10 w-full max-w-lg justify-end flex-col sm:flex-row">
-            <div className="w-auto sm:pr-10 max-3xl:pr-0">
+          <div className="flex items-start gap-10 w-full max-w-2xl justify-end flex-col sm:flex-row">
+            <div className="w-auto sm:pr-5">
               <h3 className="font-bold text-black mb-4">Průvodce</h3>
               <ul className="space-y-3">
                 {pruvodceLinks.map((link) => (
@@ -72,8 +72,26 @@ export default function Footer() {
               </ul>
             </div>
 
+            <div className="w-auto sm:pr-5">
+              <h3 className="font-bold text-black mb-4">Kontakt</h3>
+              <div className="space-y-3">
+                <a
+                  href="mailto:info@runiq.me"
+                  className="block text-gray hover:text-blue transition-colors text-sm"
+                >
+                  info@runiq.me
+                </a>
+                <p className="text-gray text-sm leading-relaxed">
+                  Bráfova 7, Praha 5
+                </p>
+                <p className="text-gray text-sm">
+                  +420 123 456 789
+                </p>
+              </div>
+            </div>
+
             {/* Máte dotaz? */}
-            <div className="flex flex-col justify-center flex-1">
+            <div className="flex flex-col justify-center flex-1 w-full sm:w-auto">
               <label htmlFor="textarea-ve-footeru-pro-dotaz" className="font-bold text-black mb-2 pl-2 cursor-pointer block">Máte dotaz?</label>
               <div className="flex items-center gap-2 w-full">
                 <textarea

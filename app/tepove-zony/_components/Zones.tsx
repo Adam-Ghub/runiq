@@ -69,7 +69,7 @@ export default function Zones({ age, restingHR, isMaxHREnabled, maxHROverride }:
 
       <div className="grid grid-cols-5 max-lg:grid-cols-3 max-md:grid-cols-1 gap-8">
         {zonesData.map((zone) => (
-          <div key={zone.id} className="relative bg-foreground rounded-4xl p-10 border-4 border-gray/10 flex flex-col transition-all hover:shadow-xl">
+          <div key={zone.id} className="relative bg-foreground rounded-4xl p-10 border-2 border-gray/10 flex flex-col transition-all hover:shadow-xl">
             <div className={`w-18 h-18 rounded-full border-3 ${zone.circleBorder} flex items-center justify-center mx-auto mb-8`}>
               <span className={`font-black text-xl ${zone.color}`}>{zone.id}</span>
             </div>
