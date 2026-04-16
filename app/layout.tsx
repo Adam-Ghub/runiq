@@ -111,8 +111,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="cs" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* Responsive preload: mobile gets the small 38 KB image, desktop the full 1920 px one */}
+      <head>
         <link
           rel="preload"
           as="image"
@@ -129,6 +128,10 @@ export default function RootLayout({
           media="(min-width: 769px)"
           fetchPriority="high"
         />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}

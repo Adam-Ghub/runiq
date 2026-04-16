@@ -80,9 +80,11 @@ export default function HeroCarousel() {
         {/* Pagination dots */}
       <div className="absolute bottom-8 max-sm:bottom-5 left-1/2 -translate-x-1/2 z-10 flex gap-2.5">
         {slides.map((slide, index) => (
-          <span
+          <button
             key={slide.id}
-            className={`transition-all duration-300 rounded-full ${
+            onClick={() => goTo(index)}
+            aria-label={`Přejít na slide ${index + 1}`}
+            className={`transition-all duration-300 rounded-full cursor-pointer ${
               index === current
                 ? 'bg-white w-8 h-2.5 max-sm:w-6 max-sm:h-2'
                 : 'bg-white/50 w-2.5 h-2.5 max-sm:w-2 max-sm:h-2'
