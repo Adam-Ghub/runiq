@@ -20,7 +20,7 @@ export default function HeroStatic() {
           alt={slide.imageAlt}
           fetchPriority="high"
           loading="eager"
-          decoding="sync"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
           style={slide.blurDataURL ? {
             backgroundImage: `url(${slide.blurDataURL})`,
