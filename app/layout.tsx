@@ -139,8 +139,8 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <GoogleAnalytics gaId="G-LKEPBWPWTK"/>
       </body>
-       <GoogleAnalytics gaId="G-LKEPBWPWTK"/>
     </html>
   );
 }

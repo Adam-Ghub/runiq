@@ -5,6 +5,9 @@ import GalleryGrid from './_components/GalleryGrid';
 export const metadata: Metadata = {
   title: 'Galerie | Runiq',
   description: 'Prohlédněte si momenty z našich běhů, vybavení a inspiraci, která nás žene vpřed.',
+  alternates: {
+    canonical: 'https://runiq.me/galerie',
+  },
 };
 
 export default function GaleriePage() {
