@@ -11,14 +11,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://runiq.me/tepove-zony",
       lastModified: new Date(),
-      changeFrequency: "weekly",
+      changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: "https://runiq.me/vybaveni",
       lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: "https://runiq.me/kontakt",
@@ -26,5 +26,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    {
+      url: "https://runiq.me/galerie",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    }
   ];
 }

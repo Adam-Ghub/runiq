@@ -59,8 +59,8 @@ export default function GalleryGrid() {
                 src={photo.src}
                 alt={photo.title}
                 fill
-                // On mobile (single column) only 1st image is above the fold; on desktop (3 cols) first 3 are visible
-                priority={index === 0}
+                priority={index < 3}
+                {...(index < 3 ? { fetchPriority: 'high' } : {})}
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
