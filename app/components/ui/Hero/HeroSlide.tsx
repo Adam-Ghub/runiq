@@ -63,7 +63,7 @@ export default function HeroSlide({ slide, direction, isFirst }: HeroSlideProps)
       <div className="relative h-full flex items-center justify-center">
         <div className="max-w-[1600px] mx-auto px-20 max-lg:px-16 max-sm:px-14 w-full flex justify-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={isFirst ? false : { opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="max-w-2xl w-full p-8 max-sm:p-6 rounded-3xl bg-black/20 backdrop-blur-md border border-white/15 text-center"
