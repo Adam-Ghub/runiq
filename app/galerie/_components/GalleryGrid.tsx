@@ -4,30 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const photos = [
-  { src: '/gallery/Gallery_1.webp', title: 'Ranní rozcvička' },
-  { src: '/gallery/Gallery_3.webp', title: 'Běh v horách' },
-  { src: '/gallery/Gallery_4.webp', title: 'Správná technika' },
-  { src: '/gallery/Gallery_5.webp', title: 'Večerní tempo' },
-  { src: '/gallery/Gallery_6.webp', title: 'Městský běh' },
-  { src: '/gallery/Gallery_7.webp', title: 'Závodní nasazení' },
-  { src: '/gallery/Gallery_8.webp', title: 'Zasloužený odpočinek' },
-  { src: '/gallery/Gallery_9.webp', title: 'Soustředění' },
-  { src: '/gallery/Gallery_10.webp', title: 'Příprava na start' },
-  { src: '/gallery/Gallery_11.webp', title: 'Radost z pohybu' },
-  { src: '/gallery/Gallery_12.webp', title: 'Běžecká komunita' },
-  { src: '/gallery/Gallery_13.webp', title: 'Překonávání limitů' },
-  { src: '/gallery/Gallery_14.webp', title: 'Nové obzory' },
-  { src: '/gallery/Gallery_15.webp', title: 'Síla a vytrvalost' },
-  { src: '/gallery/Gallery_16.webp', title: 'Cesta k cíli' },
-  { src: '/gallery/Gallery_17.webp', title: 'Rychlostní trénink' },
-  { src: '/gallery/Gallery_18.webp', title: 'Relaxace po běhu' },
-  { src: '/gallery/Gallery_15.webp', title: 'Síla a vytrvalost' },
-  { src: '/gallery/Gallery_16.webp', title: 'Cesta k cíli' },
-  { src: '/gallery/Gallery_17.webp', title: 'Rychlostní trénink' },
-  { src: '/gallery/Gallery_18.webp', title: 'Relaxace po běhu' },
-];
+import { photos } from './photos';
 
 export default function GalleryGrid() {
   const [selectedPhoto, setSelectedPhoto] = useState<typeof photos[0] | null>(null);
@@ -46,9 +23,10 @@ export default function GalleryGrid() {
         {photos.map((photo, index) => (
           <motion.div
             key={index}
-            // First image: no opacity animation so it's the LCP element immediately
-            initial={index === 0 ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            // Use y-only animation (no opacity) so items are always visible – avoids
+            // both LCP delay and the flash when replacing GalleryGridStatic.
+            initial={{ y: 10 }}
+            whileInView={{ y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.4, delay: (index % 3) * 0.1 }}
             className="flex flex-col group cursor-pointer bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:border-blue/20 transition-all duration-500 hover:-translate-y-1"
@@ -59,9 +37,9 @@ export default function GalleryGrid() {
                 src={photo.src}
                 alt={photo.title}
                 fill
-                priority={index === 0}  
+                priority={index < 3}
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                sizes="(max-width: 768px) calc(100vw - 4rem), (max-width: 1200px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
             </div>

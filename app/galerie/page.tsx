@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Container from '../components/Container';
-import GalleryGrid from './_components/GalleryGrid';
+import GalleryGridLazy from './_components/GalleryGridLazy';
 
 export const metadata: Metadata = {
   title: 'Galerie | Runiq',
@@ -24,7 +24,7 @@ export default function GaleriePage() {
           </p>
         </header>
 
-        <GalleryGrid />
+        <GalleryGridLazy />
       </Container>
     </div>
   );
