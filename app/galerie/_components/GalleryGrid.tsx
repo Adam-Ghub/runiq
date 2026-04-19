@@ -23,10 +23,8 @@ const photos = [
   { src: '/gallery/Gallery_16.webp', title: 'Cesta k cíli' },
   { src: '/gallery/Gallery_17.webp', title: 'Rychlostní trénink' },
   { src: '/gallery/Gallery_18.webp', title: 'Relaxace po běhu' },
-  { src: '/gallery/Gallery_15.webp', title: 'Síla a vytrvalost' },
-  { src: '/gallery/Gallery_16.webp', title: 'Cesta k cíli' },
-  { src: '/gallery/Gallery_17.webp', title: 'Rychlostní trénink' },
-  { src: '/gallery/Gallery_18.webp', title: 'Relaxace po běhu' },
+  { src: '/gallery/Gallery_19.webp', title: 'Trailový běh' },
+  { src: '/gallery/Gallery_20.webp', title: 'Rychlý běh' },
 ];
 
 export default function GalleryGrid() {
