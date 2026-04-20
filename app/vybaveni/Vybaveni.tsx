@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import Image from 'next/image';
 import { 
   Route, 
   Mountain, 
@@ -69,15 +70,6 @@ export default function Vybaveni() {
   const [selections, setSelections] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);
   const [allDone, setAllDone] = useState(false);
-
-  useEffect(() => {
-    if (!allDone) return;
-    const shoes = getRecommendedShoes(selections);
-    shoes.forEach(({ image }) => {
-      const img = new window.Image();
-      img.src = image;
-    });
-  }, [allDone, selections]);
 
   const stepData = STEPS[currentStep];
 
@@ -151,6 +143,21 @@ export default function Vybaveni() {
         <div className="grid grid-cols-3 max-md:grid-cols-1 gap-8 pb-20">
           {allDone ? (
             <div className="col-span-3 flex flex-col items-center justify-center py-16 gap-6 animate-in fade-in duration-500">
+              {/* Skryté obrázky pro preload — Next.js Image priority zajistí správné optimizer URL */}
+              <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '800px' }}>
+                {getRecommendedShoes(selections).map((shoe, i) => (
+                  <div key={shoe.id} style={{ position: 'relative', width: i === 0 ? '400px' : '96px', height: i === 0 ? '420px' : '96px' }}>
+                    <Image
+                      src={shoe.image}
+                      alt=""
+                      fill
+                      priority
+                      sizes={i === 0 ? '(max-width: 768px) 100vw, 50vw' : '96px'}
+                      className="object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
               <div className="flex items-center gap-3 text-green-600">
                 <CheckCircle2 size={48} />
               </div>
