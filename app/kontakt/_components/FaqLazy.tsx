@@ -16,10 +16,10 @@ const Faq = dynamic(() => import('../../components/ui/Faq/Faq'), {
 
 export default function FaqLazy() {
   const [shouldLoadFaq, setShouldLoadFaq] = useState(false);
-  const triggerRef = useRef<HTMLElement | null>(null);
+  const faqTriggerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    if (shouldLoadFaq || !triggerRef.current) return;
+    if (shouldLoadFaq || !faqTriggerRef.current) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -31,13 +31,13 @@ export default function FaqLazy() {
       { rootMargin: '200px 0px' }
     );
 
-    observer.observe(triggerRef.current);
+    observer.observe(faqTriggerRef.current);
 
     return () => observer.disconnect();
   }, [shouldLoadFaq]);
 
   return (
-    <section ref={triggerRef}>
+    <section ref={faqTriggerRef} aria-label="Často kladené dotazy">
       {shouldLoadFaq ? (
         <Faq />
       ) : (
