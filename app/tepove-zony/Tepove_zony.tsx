@@ -73,7 +73,7 @@ export default function TepoveZonyClient() {
 
   return (
     <>
-      <section className="flex items-center justify-center relative pb-20">
+      <section className="flex items-center justify-center relative pb-12 md:pb-20">
         <Container className="flex flex-col items-center justify-center w-full">
           <CalculatorPage 
             age={age} 
@@ -90,7 +90,7 @@ export default function TepoveZonyClient() {
       </section>
 
       <div ref={resultsRef} className="scroll-mt-10">
-        <section className="py-20 border-t border-gray/5">
+        <section className="py-12 md:py-20 border-t border-gray/5 bg-white/50">
           <div ref={zonesTriggerRef}>
             {shouldLoadZones ? (
               <Zones 

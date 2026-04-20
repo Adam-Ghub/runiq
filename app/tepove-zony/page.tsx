@@ -49,7 +49,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorJsonLd) }}
       />
-      <section className="pt-20 lg:pt-32">
+      <section className="pt-12 pb-6 md:pt-20 lg:pt-32">
         <Container className="flex flex-col items-center justify-center w-full">
           <Heading
             title="Vypočítejte si své"

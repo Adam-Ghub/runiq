@@ -47,7 +47,7 @@ export default function Zones({ age, restingHR, isMaxHREnabled, maxHROverride }:
       min: calculateBPM(0.81), 
       max: calculateBPM(0.90),
       desc: "Tvrdý trénink pro zvýšení rychlosti a prahu únavy.",
-      benefits: ["Zvyšování rychlosti", "Tolerance laktátu", "Síla nohou"],
+      benefits: ["Zvýšení rychlosti", "Tolerance laktátu", "Síla nohou"],
       color: "text-orange-500", circleBorder: "border-orange-500", bgColor: "bg-orange-500"
     },
     {
@@ -61,34 +61,34 @@ export default function Zones({ age, restingHR, isMaxHREnabled, maxHROverride }:
   ];
 
   return (
-    <Container className="my-20 px-6">
-      <div className="mb-16 text-center">
-        <h2 className="text-4xl font-bold text-black mb-4 tracking-tight">Vaše tepové zóny pro běh</h2>
-        <p className="mt-6 text-md max-md:text-base text-gray-600 max-w-2xl mx-auto  leading-relaxed">Výpočet tepových zón pro běhání. Zjistěte svůj cílový tep pro spalování tuků (zóna 2), aerobní zónu i anaerobní práh.</p>
+    <Container className="my-12 md:my-20 px-4 md:px-6">
+      <div className="mb-10 md:mb-16 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-4 tracking-tight">Vaše tepové zóny pro běh</h2>
+        <p className="mt-4 md:mt-6 text-sm md:text-md max-md:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">Výpočet tepových zón pro běhání.</p>
       </div>
 
-      <div className="grid grid-cols-5 max-lg:grid-cols-3 max-md:grid-cols-1 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8">
         {zonesData.map((zone) => (
-          <div key={zone.id} className="relative bg-foreground rounded-4xl p-10 border-2 border-gray/10 flex flex-col transition-all hover:shadow-xl">
-            <div className={`w-18 h-18 rounded-full border-3 ${zone.circleBorder} flex items-center justify-center mx-auto mb-8`}>
-              <span className={`font-black text-xl ${zone.color}`}>{zone.id}</span>
+          <div key={zone.id} className="relative bg-foreground rounded-3xl md:rounded-4xl p-6 md:p-10 border-2 border-gray/10 flex flex-col transition-all hover:shadow-xl">
+            <div className={`w-14 h-14 md:w-18 md:h-18 rounded-full border-3 ${zone.circleBorder} flex items-center justify-center mx-auto mb-6 md:mb-8`}>
+              <span className={`font-black text-lg md:text-xl ${zone.color}`}>{zone.id}</span>
             </div>
-            <div className="text-center mb-8">
-              <h3 className="font-bold text-black text-2xl mb-1">{zone.name}</h3>
-              <span className={`font-black text-xl ${zone.color}`}>{zone.min}-{zone.max} BPM</span>
+            <div className="text-center mb-6 md:mb-8">
+              <h3 className="font-bold text-black text-xl md:text-2xl mb-1">{zone.name}</h3>
+              <span className={`font-black text-lg md:text-xl ${zone.color}`}>{zone.min}-{zone.max} BPM</span>
             </div>
-            <p className="text-gray text-sm text-center mb-10 leading-relaxed min-h-12">{zone.desc}</p>
-            <div className="mb-10 grow">
-              <ul className="space-y-4">
+            <p className="text-gray text-xs md:text-sm text-center mb-6 md:mb-10 leading-relaxed min-h-12">{zone.desc}</p>
+            <div className="mb-6 md:mb-10 grow">
+              <ul className="space-y-3 md:space-y-4">
                 {zone.benefits.map((benefit, index) => (
                   <li key={index} className="flex items-center gap-3">
-                    <CheckCircle2 className={`w-6 h-6 mt-0.5 shrink-0 ${zone.color}`} />
-                    <span className="text-[14px] font-bold text-black/80 leading-tight ">{benefit}</span>
+                    <CheckCircle2 className={`w-5 h-5 md:w-6 md:h-6 mt-0.5 shrink-0 ${zone.color}`} />
+                    <span className="text-xs md:text-[14px] font-bold text-black/80 leading-tight ">{benefit}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="w-full bg-gray/10 h-3 rounded-full overflow-hidden mt-auto">
+            <div className="w-full bg-gray/10 h-2 md:h-3 rounded-full overflow-hidden mt-auto">
               <div className={`${zone.bgColor} h-full transition-all duration-1000`} style={{ width: `${(parseInt(zone.id.substring(1)) / 5) * 100}%` }} />
             </div>
           </div>
