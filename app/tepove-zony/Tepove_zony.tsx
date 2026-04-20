@@ -2,8 +2,12 @@
 
 import { useState, useRef, useEffect } from "react";
 import dynamic from "next/dynamic";
-import CalculatorPage from "./_components/Calculator";
 import Container from "../components/Container";
+
+const CalculatorPage = dynamic(() => import("./_components/Calculator"), {
+  ssr: true,
+  loading: () => <div className="w-full max-w-xl h-[400px] bg-foreground rounded-3xl animate-pulse" />
+});
 
 const ZonesLoadingPlaceholder = () => (
   <div className="py-20 text-center text-gray animate-pulse" role="status" aria-live="polite">

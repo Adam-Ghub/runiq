@@ -1,7 +1,12 @@
 import { Metadata } from "next";
-import Contact from './_components/Contact'
+import dynamic from 'next/dynamic';
 import FaqLazy from './_components/FaqLazy'
 import Container from "@/app/components/Container";
+
+const Contact = dynamic(() => import('./_components/Contact'), {
+  ssr: true,
+  loading: () => <div className="w-full max-w-5xl h-[400px] bg-foreground rounded-3xl animate-pulse mx-auto" />
+});
 
 export const metadata: Metadata = {
   title: 'Kontaktujte Nás',
