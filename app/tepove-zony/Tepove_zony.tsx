@@ -1,12 +1,20 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import dynamic from "next/dynamic";
 import CalculatorPage from "./_components/Calculator";
-import Zones from "./_components/Zones";
 import Container from "../components/Container";
-import Heading from "../components/Heading";
 
-export default function TepoveZony() {
+const Zones = dynamic(() => import("./_components/Zones"), {
+  ssr: false,
+  loading: () => (
+    <div className="py-20 text-center text-gray animate-pulse">
+      Načítám zóny…
+    </div>
+  ),
+});
+
+export default function TepoveZonyClient({ children }: { children?: React.ReactNode }) {
   const [age, setAge] = useState("25");
   const [restingHR, setRestingHR] = useState("60");
   const [isMaxHREnabled, setIsMaxHREnabled] = useState(false);
@@ -45,11 +53,7 @@ export default function TepoveZony() {
     <main className="bg-background">
       <section className="min-h-[800px] flex items-center justify-center relative pt-20">
         <Container className="flex flex-col items-center justify-center w-full">
-          <Heading 
-            title="Vypočítejte si své" 
-            titleHighlight="tepové zóny" 
-            description="Zadejte věk a klidový tep. Kalkulačka tepových zón spočítá vaše tréninkové zóny podle Karvonenovy metody – ideální intenzita pro spalování tuků, vytrvalost i rychlost." 
-          />
+          {children}
           <CalculatorPage 
             age={age} 
             setAge={setAge} 

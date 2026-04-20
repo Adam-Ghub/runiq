@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Mail } from 'lucide-react';
 import Container from '@/app/components/Container';
 
-const Contact = () => {
+const Contact = ({ children }: { children?: React.ReactNode }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -35,15 +35,7 @@ const Contact = () => {
   return (
     <section className="py-20">
       <Container className='flex items-center flex-col'>
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-black mb-4">
-            Napište nám zprávu
-          </h1>
-          <p className="text-gray text-md max-md:text-lg">
-            Máte dotaz ohledně běhání, tepových zón nebo výběru běžeckých bot? Neváhejte nás kontaktovat.
-          </p>
-        </div>
+        {children}
 
         {/* Main Contact Card */}
         <div className="bg-foreground lg:max-w-5xl rounded-3xl shadow-sm border border-slate-100 overflow-hidden flex flex-row max-md:flex-col">

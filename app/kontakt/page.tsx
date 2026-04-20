@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Contact from './_components/Contact'
-import Faq from '../components/ui/Faq/Faq'
+import FaqLazy from './_components/FaqLazy'
 
 export const metadata: Metadata = {
   title: 'Kontaktujte Nás',
@@ -13,8 +13,17 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <Contact />
-      <Faq />
+      <Contact>
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-black mb-4">
+            Napište nám zprávu
+          </h1>
+          <p className="text-gray text-base max-md:text-lg">
+            Máte dotaz ohledně běhání, tepových zón nebo výběru běžeckých bot? Neváhejte nás kontaktovat.
+          </p>
+        </div>
+      </Contact>
+      <FaqLazy />
     </>
   )
 }

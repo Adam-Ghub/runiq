@@ -112,22 +112,6 @@ export default function RootLayout({
   return (
     <html lang="cs" suppressHydrationWarning>
       <head>
-        <link
-          rel="preload"
-          as="image"
-          href="/hero/Carousel_3_mobile.webp"
-          type="image/webp"
-          media="(max-width: 768px)"
-          fetchPriority="high"
-        />
-        <link
-          rel="preload"
-          as="image"
-          href="/hero/Carousel_3.webp"
-          type="image/webp"
-          media="(min-width: 769px)"
-          fetchPriority="high"
-        />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
       </head>
