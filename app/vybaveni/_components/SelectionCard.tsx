@@ -43,7 +43,7 @@ export const SelectionCard = ({
 
       {/* Textový obsah */}
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
+        <h2 className="text-xl font-bold text-gray-900 mb-2">{title}</h2>
         {description && <p className="text-gray-500 text-sm">{description}</p>}
       </div>
 

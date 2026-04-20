@@ -16,7 +16,7 @@ export default function Card({ title, description, linkText, linkHref, Icon }: C
         <Icon className="w-6 h-6 text-blue" strokeWidth={2.5} />
       </div>
 
-      <h3 className="text-xl font-bold text-black mb-3">{title}</h3>
+      <h2 className="text-xl font-bold text-black mb-3">{title}</h2>
       <p className="text-gray leading-relaxed mb-8 grow">
         {description}
       </p>

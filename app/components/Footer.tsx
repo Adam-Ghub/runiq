@@ -57,7 +57,7 @@ export default function Footer() {
 
           <div className="flex items-start gap-10 w-full max-w-2xl justify-end flex-col sm:flex-row">
             <div className="w-auto sm:pr-5">
-              <h3 className="font-bold text-black mb-4">Průvodce</h3>
+              <h2 className="font-bold text-black mb-4 text-base">Průvodce</h2>
               <ul className="space-y-3">
                 {pruvodceLinks.map((link) => (
                   <li key={link.label}>
@@ -73,7 +73,7 @@ export default function Footer() {
             </div>
 
             <div className="w-auto sm:pr-5">
-              <h3 className="font-bold text-black mb-4">Kontakt</h3>
+              <h2 className="font-bold text-black mb-4 text-base">Kontakt</h2>
               <div className="space-y-3">
                 <a
                   href="mailto:info@runiq.me"
