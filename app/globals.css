@@ -6,8 +6,6 @@
   --black-text: #0F172A;
   --gray-text: #4f5e73;
   --blue-text: #0060E6;
-  --font-geist-sans: "Inter", "Segoe UI", "Helvetica Neue", Arial, ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-geist-mono: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", ui-monospace, monospace;
 }
 
 @theme {
