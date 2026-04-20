@@ -14,7 +14,7 @@ const Zones = dynamic(() => import("./_components/Zones"), {
   ),
 });
 
-export default function TepoveZonyClient({ children }: { children?: React.ReactNode }) {
+export default function TepoveZonyClient() {
   const [age, setAge] = useState("25");
   const [restingHR, setRestingHR] = useState("60");
   const [isMaxHREnabled, setIsMaxHREnabled] = useState(false);
@@ -50,10 +50,9 @@ export default function TepoveZonyClient({ children }: { children?: React.ReactN
   };
 
   return (
-    <main className="bg-background">
-      <section className="min-h-[800px] flex items-center justify-center relative pt-20">
+    <>
+      <section className="flex items-center justify-center relative pb-20">
         <Container className="flex flex-col items-center justify-center w-full">
-          {children}
           <CalculatorPage 
             age={age} 
             setAge={setAge} 
@@ -78,6 +77,6 @@ export default function TepoveZonyClient({ children }: { children?: React.ReactN
           />
         </section>
       </div>
-    </main>
+    </>
   );
 }

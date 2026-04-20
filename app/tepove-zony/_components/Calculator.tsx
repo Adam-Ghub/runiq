@@ -64,7 +64,15 @@ export default function CalculatorPage({
             type="number"
             value={isMaxHREnabled ? maxHRInput : age}
             onChange={(e) => isMaxHREnabled ? setMaxHRInput(e.target.value) : setAge(e.target.value)}
-            onFocus={(e) => { if (e.target.value === '0') isMaxHREnabled ? setMaxHRInput('') : setAge(''); }}
+            onFocus={(e) => { 
+              if (e.target.value === '0') {
+                if (isMaxHREnabled) {
+                  setMaxHRInput('');
+                } else {
+                  setAge('');
+                }
+              }
+            }}
             className="w-full px-6 py-4 rounded-2xl border-2 border-gray/10 text-black text-xl font-bold focus:outline-none focus:ring-4 focus:ring-blue/10 focus:border-blue transition-all bg-background/50"
           />
         </div>

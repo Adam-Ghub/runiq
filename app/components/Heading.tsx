@@ -10,7 +10,7 @@ interface HeadingProps {
 export default function Heading({ title, titleHighlight, description, className }: HeadingProps) {
   return (
     <div className={`flex flex-col items-center text-center mb-12 ${className}`}>
-      <h1 className="text-6xl max-sm:text-5xl font-extrabold text-black tracking-tight leading-[1.1]">
+      <h1 className="text-6xl max-md:text-5xl max-sm:text-4xl font-extrabold text-black tracking-tight leading-[1.1]">
         {title}<br />
         <span className="text-blue">{titleHighlight}</span>
       </h1>

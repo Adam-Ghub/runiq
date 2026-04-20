@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import TepoveZonyClient from "./Tepove_zony";
 import Heading from "../components/Heading";
+import Container from "../components/Container";
 
 const calculatorJsonLd = {
   '@context': 'https://schema.org',
@@ -43,18 +44,21 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <>
+    <main className="bg-background">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorJsonLd) }}
       />
-      <TepoveZonyClient>
-        <Heading
-          title="Vypočítejte si své"
-          titleHighlight="tepové zóny"
-          description="Zadejte věk a klidový tep. Kalkulačka tepových zón spočítá vaše tréninkové zóny podle Karvonenovy metody – ideální intenzita pro spalování tuků, vytrvalost i rychlost."
-        />
-      </TepoveZonyClient>
-    </>
+      <section className="pt-20 lg:pt-32">
+        <Container className="flex flex-col items-center justify-center w-full">
+          <Heading
+            title="Vypočítejte si své"
+            titleHighlight="tepové zóny"
+            description="Zadejte věk a klidový tep. Kalkulačka tepových zón spočítá vaše tréninkové zóny podle Karvonenovy metody – ideální intenzita pro spalování tuků, vytrvalost i rychlost."
+          />
+        </Container>
+      </section>
+      <TepoveZonyClient />
+    </main>
   );
 }

@@ -2,9 +2,8 @@
 
 import { useState } from 'react';
 import { Mail } from 'lucide-react';
-import Container from '@/app/components/Container';
 
-const Contact = ({ children }: { children?: React.ReactNode }) => {
+const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -33,72 +32,64 @@ const Contact = ({ children }: { children?: React.ReactNode }) => {
   };
 
   return (
-    <section className="py-20">
-      <Container className='flex items-center flex-col'>
-        {children}
-
-        {/* Main Contact Card */}
-        <div className="bg-foreground lg:max-w-5xl rounded-3xl shadow-sm border border-slate-100 overflow-hidden flex flex-row max-md:flex-col">
-
-          {/* Left Side - Form */}
-          <div className="flex flex-col w-full max-md:w-full p-12 border-r max-md:border-r-0 max-md:border-b border-slate-100">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="bg-blue/10 p-2 rounded-lg">
-                <Mail className="w-5 h-5 text-blue" />
-              </div>
-              <h2 className="text-xl font-bold text-black">Kontaktní formulář</h2>
-            </div>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="contact-name" className="text-sm font-semibold pl-2 text-black cursor-pointer">Vaše jméno a příjmení</label>
-                  <input
-                    id="contact-name"
-                    type="text"
-                    placeholder="Jan Novák"
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                    className="w-full px-4 py-3 mt-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue/20 focus:border-blue transition-all placeholder:text-slate-300 lg:w-full"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="contact-email" className="text-sm font-semibold pl-2 text-black cursor-pointer">Váš e-mail</label>
-                  <input
-                    id="contact-email"
-                    type="email"
-                    placeholder="name@email.cz"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 mt-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue/20 focus:border-blue transition-all placeholder:text-slate-300 lg:w-full"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="contact-message" className="text-sm font-semibold pl-2 text-black cursor-pointer">Vaše zpráva</label>
-                <textarea
-                  id="contact-message"
-                  rows={3}
-                  placeholder="Jak vám můžeme pomoci?"
-                  value={message}
-                  onChange={e => setMessage(e.target.value)}
-                  required
-                  className="w-full px-4 py-3 mt-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue/20 focus:border-blue transition-all placeholder:text-slate-300 resize-none"
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={status === 'loading'}
-                className="w-full bg-blue text-white font-bold py-4 rounded-xl hover:opacity-90 cursor-pointer transition-opacity shadow-lg shadow-blue/20 uppercase tracking-wide disabled:opacity-60"
-              >
-                {status === 'loading' ? 'Odesílám...' : status === 'success' ? 'Odesláno!' : 'Odeslat'}
-              </button>
-            </form>
+    <div className="bg-foreground lg:max-w-5xl mx-auto rounded-3xl shadow-sm border border-slate-100 overflow-hidden flex flex-row max-md:flex-col">
+      {/* Left Side - Form */}
+      <div className="flex flex-col w-full max-md:w-full p-12 border-r max-md:border-r-0 max-md:border-b border-slate-100">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="bg-blue/10 p-2 rounded-lg">
+            <Mail className="w-5 h-5 text-blue" />
           </div>
+          <h2 className="text-xl font-bold text-black">Kontaktní formulář</h2>
         </div>
-      </Container>
-    </section>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-6">
+            <div className="space-y-2">
+              <label htmlFor="contact-name" className="text-sm font-semibold pl-2 text-black cursor-pointer">Vaše jméno a příjmení</label>
+              <input
+                id="contact-name"
+                type="text"
+                placeholder="Jan Novák"
+                value={name}
+                onChange={e => setName(e.target.value)}
+                className="w-full px-4 py-3 mt-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue/20 focus:border-blue transition-all placeholder:text-slate-300 lg:w-full"
+              />
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="contact-email" className="text-sm font-semibold pl-2 text-black cursor-pointer">Váš e-mail</label>
+              <input
+                id="contact-email"
+                type="email"
+                placeholder="name@email.cz"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                className="w-full px-4 py-3 mt-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue/20 focus:border-blue transition-all placeholder:text-slate-300 lg:w-full"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <label htmlFor="contact-message" className="text-sm font-semibold pl-2 text-black cursor-pointer">Vaše zpráva</label>
+            <textarea
+              id="contact-message"
+              rows={3}
+              placeholder="Jak vám můžeme pomoci?"
+              value={message}
+              onChange={e => setMessage(e.target.value)}
+              required
+              className="w-full px-4 py-3 mt-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue/20 focus:border-blue transition-all placeholder:text-slate-300 resize-none"
+            />
+          </div>
+          <button
+            type="submit"
+            disabled={status === 'loading'}
+            className="w-full bg-blue text-white font-bold py-4 rounded-xl hover:opacity-90 cursor-pointer transition-opacity shadow-lg shadow-blue/20 uppercase tracking-wide disabled:opacity-60"
+          >
+            {status === 'loading' ? 'Odesílám...' : status === 'success' ? 'Odesláno!' : 'Odeslat'}
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
 
