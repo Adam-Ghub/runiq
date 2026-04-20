@@ -42,13 +42,8 @@ export default function GalleryGrid() {
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {photos.map((photo, index) => (
-          <motion.div
+          <div
             key={index}
-            // First image: no opacity animation so it's the LCP element immediately
-            initial={index === 0 ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.4, delay: (index % 3) * 0.1 }}
             className="flex flex-col group cursor-pointer bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:border-blue/20 transition-all duration-500 hover:-translate-y-1"
             onClick={() => setSelectedPhoto(photo)}
           >
@@ -57,7 +52,8 @@ export default function GalleryGrid() {
                 src={photo.src}
                 alt={photo.title}
                 fill
-                priority={index === 0}  
+                priority={index < 2} // Priority for the first 2 images (visible above the fold on mobile)
+                loading={index < 2 ? undefined : 'lazy'}
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
@@ -66,7 +62,7 @@ export default function GalleryGrid() {
             <div className="p-5 text-center">
               <span className="text-sm font-bold text-black block tracking-wide">{photo.title}</span>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
 
@@ -99,12 +95,17 @@ export default function GalleryGrid() {
               className="max-w-[800px] w-full flex flex-col items-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative w-full h-auto max-h-[90vh] flex justify-center">
-                <img
+              <div className="relative w-full h-[80vh] flex justify-center">
+                <Image
                   src={selectedPhoto.src}
                   alt={selectedPhoto.title}
-                  className="w-full h-auto max-h-[90vh] object-contain rounded-2xl shadow-2xl"
+                  fill
+                  className="object-contain rounded-2xl shadow-2xl"
+                  sizes="(max-width: 800px) 100vw, 800px"
                 />
+              </div>
+              <div className="mt-4 p-3 bg-white/10 backdrop-blur-md rounded-xl border border-white/20">
+                <span className="text-white font-bold">{selectedPhoto.title}</span>
               </div>
             </motion.div>
           </motion.div>
