@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { 
   Route, 
   Mountain, 
@@ -9,9 +10,6 @@ import {
   Zap, 
   Dumbbell, 
   Trophy, 
-  Footprints, 
-  Expand, 
-  Target, 
   ArrowLeft,
   CheckCircle2,
   Banknote,
@@ -20,8 +18,12 @@ import {
 
 // --- IMPORTY TVÝCH KOMPONENT ---
 import { SelectionCard } from './_components/SelectionCard';
-import { SelectedShoe } from './_components/SelectedShoe';
 import { getRecommendedShoes } from './_lib/data';
+
+const SelectedShoe = dynamic(
+  () => import('./_components/SelectedShoe').then(m => ({ default: m.SelectedShoe })),
+  { ssr: false }
+);
 
 const STEPS = [
   {
