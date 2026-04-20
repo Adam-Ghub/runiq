@@ -3,13 +3,15 @@
 import dynamic from 'next/dynamic';
 import { useEffect, useRef, useState } from 'react';
 
+const FaqLoadingPlaceholder = () => (
+  <div className="py-16 flex items-center justify-center" role="status" aria-live="polite">
+    <span className="sr-only">Načítám často kladené dotazy…</span>
+  </div>
+);
+
 const Faq = dynamic(() => import('../../components/ui/Faq/Faq'), {
   ssr: false,
-  loading: () => (
-    <div className="py-16 flex items-center justify-center" role="status" aria-live="polite">
-      <span className="sr-only">Načítám často kladené dotazy…</span>
-    </div>
-  ),
+  loading: () => <FaqLoadingPlaceholder />,
 });
 
 export default function FaqLazy() {
@@ -39,9 +41,7 @@ export default function FaqLazy() {
       {shouldLoadFaq ? (
         <Faq />
       ) : (
-        <div className="py-16 flex items-center justify-center" role="status" aria-live="polite">
-          <span className="sr-only">Načítám často kladené dotazy…</span>
-        </div>
+        <FaqLoadingPlaceholder />
       )}
     </section>
   );

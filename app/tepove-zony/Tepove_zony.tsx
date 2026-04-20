@@ -5,13 +5,15 @@ import dynamic from "next/dynamic";
 import CalculatorPage from "./_components/Calculator";
 import Container from "../components/Container";
 
+const ZonesLoadingPlaceholder = () => (
+  <div className="py-20 text-center text-gray animate-pulse" role="status" aria-live="polite">
+    Načítám zóny…
+  </div>
+);
+
 const Zones = dynamic(() => import("./_components/Zones"), {
   ssr: false,
-  loading: () => (
-    <div className="py-20 text-center text-gray animate-pulse" role="status" aria-live="polite">
-      Načítám zóny…
-    </div>
-  ),
+  loading: () => <ZonesLoadingPlaceholder />,
 });
 
 export default function TepoveZonyClient() {
@@ -98,9 +100,7 @@ export default function TepoveZonyClient() {
                 maxHROverride={calculatedData.maxHRInput}
               />
             ) : (
-              <div className="py-20 text-center text-gray animate-pulse" role="status" aria-live="polite">
-                Načítám zóny…
-              </div>
+              <ZonesLoadingPlaceholder />
             )}
           </div>
         </section>
