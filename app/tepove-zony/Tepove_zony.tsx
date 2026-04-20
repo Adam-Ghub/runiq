@@ -5,13 +5,15 @@ import dynamic from "next/dynamic";
 import CalculatorPage from "./_components/Calculator";
 import Container from "../components/Container";
 
+const ZonesLoadingPlaceholder = () => (
+  <div className="py-20 text-center text-gray animate-pulse" role="status" aria-live="polite">
+    Načítám zóny…
+  </div>
+);
+
 const Zones = dynamic(() => import("./_components/Zones"), {
   ssr: false,
-  loading: () => (
-    <div className="py-20 text-center text-gray animate-pulse">
-      Načítám zóny…
-    </div>
-  ),
+  loading: () => <ZonesLoadingPlaceholder />,
 });
 
 export default function TepoveZonyClient() {
@@ -21,6 +23,8 @@ export default function TepoveZonyClient() {
   const [maxHRInput, setMaxHRInput] = useState("185");
   
   const resultsRef = useRef<HTMLDivElement>(null);
+  const zonesTriggerRef = useRef<HTMLDivElement>(null);
+  const [shouldLoadZones, setShouldLoadZones] = useState(false);
   
   const [calculatedData, setCalculatedData] = useState({
     age: 25,
@@ -38,6 +42,24 @@ export default function TepoveZonyClient() {
       });
     }
   }, [calculatedData]);
+
+  useEffect(() => {
+    if (shouldLoadZones || !zonesTriggerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoadZones(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px 0px" }
+    );
+
+    observer.observe(zonesTriggerRef.current);
+
+    return () => observer.disconnect();
+  }, [shouldLoadZones]);
 
   const handleCalculate = () => {
     setCalculatedData(prev => ({
@@ -69,12 +91,18 @@ export default function TepoveZonyClient() {
 
       <div ref={resultsRef} className="scroll-mt-10">
         <section className="py-20 border-t border-gray/5">
-          <Zones 
-            age={calculatedData.age} 
-            restingHR={calculatedData.restingHR}
-            isMaxHREnabled={calculatedData.isMaxHREnabled}
-            maxHROverride={calculatedData.maxHRInput}
-          />
+          <div ref={zonesTriggerRef}>
+            {shouldLoadZones ? (
+              <Zones 
+                age={calculatedData.age} 
+                restingHR={calculatedData.restingHR}
+                isMaxHREnabled={calculatedData.isMaxHREnabled}
+                maxHROverride={calculatedData.maxHRInput}
+              />
+            ) : (
+              <ZonesLoadingPlaceholder />
+            )}
+          </div>
         </section>
       </div>
     </>
