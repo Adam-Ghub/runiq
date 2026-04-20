@@ -8,7 +8,7 @@ import Container from "../components/Container";
 const Zones = dynamic(() => import("./_components/Zones"), {
   ssr: false,
   loading: () => (
-    <div className="py-20 text-center text-gray animate-pulse">
+    <div className="py-20 text-center text-gray animate-pulse" role="status" aria-live="polite">
       Načítám zóny…
     </div>
   ),
@@ -99,7 +99,7 @@ export default function TepoveZonyClient() {
                 maxHROverride={calculatedData.maxHRInput}
               />
             ) : (
-              <div className="py-20 text-center text-gray animate-pulse">
+              <div className="py-20 text-center text-gray animate-pulse" role="status" aria-live="polite">
                 Načítám zóny…
               </div>
             )}

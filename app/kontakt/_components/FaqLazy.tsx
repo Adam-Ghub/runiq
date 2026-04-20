@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const Faq = dynamic(() => import('../../components/ui/Faq/Faq'), {
   ssr: false,
-  loading: () => <div className="py-16" aria-hidden="true" />,
+  loading: () => <div className="py-16" role="status" aria-live="polite" aria-label="Načítám často kladené dotazy" />,
 });
 
 export default function FaqLazy() {
@@ -30,5 +30,13 @@ export default function FaqLazy() {
     return () => observer.disconnect();
   }, [shouldLoadFaq]);
 
-  return <section ref={triggerRef}>{shouldLoadFaq ? <Faq /> : <div className="py-16" aria-hidden="true" />}</section>;
+  return (
+    <section ref={triggerRef}>
+      {shouldLoadFaq ? (
+        <Faq />
+      ) : (
+        <div className="py-16" role="status" aria-live="polite" aria-label="Načítám často kladené dotazy" />
+      )}
+    </section>
+  );
 }
