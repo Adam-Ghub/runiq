@@ -60,7 +60,6 @@ export default function TepoveZonyClient() {
   }, [shouldLoadZones]);
 
   const handleCalculate = () => {
-    setShouldLoadZones(true);
     setCalculatedData(prev => ({
       age: Number(age) || 0,
       restingHR: Number(restingHR) || 0,

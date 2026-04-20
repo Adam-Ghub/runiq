@@ -5,7 +5,11 @@ import { useEffect, useRef, useState } from 'react';
 
 const Faq = dynamic(() => import('../../components/ui/Faq/Faq'), {
   ssr: false,
-  loading: () => <div className="py-16" role="status" aria-live="polite" aria-label="Načítám často kladené dotazy" />,
+  loading: () => (
+    <div className="py-16 flex items-center justify-center" role="status" aria-live="polite">
+      <span className="sr-only">Načítám často kladené dotazy…</span>
+    </div>
+  ),
 });
 
 export default function FaqLazy() {
@@ -35,7 +39,9 @@ export default function FaqLazy() {
       {shouldLoadFaq ? (
         <Faq />
       ) : (
-        <div className="py-16" role="status" aria-live="polite" aria-label="Načítám často kladené dotazy" />
+        <div className="py-16 flex items-center justify-center" role="status" aria-live="polite">
+          <span className="sr-only">Načítám často kladené dotazy…</span>
+        </div>
       )}
     </section>
   );
