@@ -40,7 +40,7 @@ export default function GalleryGrid() {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {photos.map((photo, index) => (
           <div
             key={index}
@@ -52,14 +52,17 @@ export default function GalleryGrid() {
                 src={photo.src}
                 alt={photo.title}
                 fill
-                priority={index < 2} // Priority for the first 2 images (visible above the fold on mobile)
-                loading={index < 2 ? undefined : 'lazy'}
+                priority={index < 4} // Slightly more aggressive priority for initial paint
+                // fetchPriority is part of Next.js 14.2+, using camelCase in JSX
+                // @ts-ignore
+                fetchPriority={index < 2 ? "high" : "auto"}
+                loading={index < 4 ? undefined : 'lazy'}
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
             </div>
-            <div className="p-5 text-center">
+            <div className="p-4 md:p-5 text-center">
               <span className="text-sm font-bold text-black block tracking-wide">{photo.title}</span>
             </div>
           </div>
@@ -95,7 +98,7 @@ export default function GalleryGrid() {
               className="max-w-[800px] w-full flex flex-col items-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative w-full h-[80vh] flex justify-center">
+              <div className="relative w-full h-[70vh] md:h-[80vh] flex justify-center">
                 <Image
                   src={selectedPhoto.src}
                   alt={selectedPhoto.title}
