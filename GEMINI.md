@@ -19,7 +19,6 @@ Runiq is a comprehensive Czech-language web application and guide for runners. I
 - `app/`: Contains the main application routes and components.
   - `api/contact/`: API route for handling contact form submissions via Resend.
   - `components/`: Shared UI components (Container, Header, Footer, Heading, etc.).
-  - `galerie/`: Equipment gallery with Framer Motion animations.
   - `kontakt/`: Contact page and its components.
   - `tepove-zony/`: Heart rate zone calculator (Karvonen formula).
   - `vybaveni/`: Running shoe recommendation engine (Quiz-based).

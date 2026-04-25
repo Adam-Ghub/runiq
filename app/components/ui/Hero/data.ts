@@ -40,18 +40,4 @@ export const slides: SlideData[] = [
     ctaText: 'Vybrat boty',
     ctaHref: '/vybaveni',
   },
-  {
-    id: 3,
-    image: '/hero/Carousel_1.webp',
-    mobileImage: '/hero/Carousel_1_mobile.webp',
-    blurDataURL:
-      'data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoQAAgABUB8JZgCdAEO5EKzIAAA/kUtUqBpGXnwKbm2ZkLO3PWfzKVDmJGvyfy4+wdY8BKHr5jEi+tRByr0z8AA',
-    imageAlt: 'Galerie běžeckého vybavení – boty a doplňky',
-    title: 'Prohlédněte si naše',
-    titleHighlight: 'vybavení',
-    description:
-      'Galerie prověřeného běžeckého vybavení. Boty, které jsme testovali a doporučujeme pro všechny typy běžců – od začátečníků po maraton.',
-    ctaText: 'Zobrazit galerii',
-    ctaHref: '/galerie',
-  },
 ];

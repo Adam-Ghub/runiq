@@ -9,7 +9,6 @@ import Container from './Container';
 const navLinks = [
     { label: 'Tepové zóny', href: '/tepove-zony' },
    { label: 'Vybavení', href: '/vybaveni' },
-   { label: 'Galerie', href: '/galerie' },
    /* { label: 'Tipy', href: '/tipy' },*/
     { label: 'Kontakt', href: '/kontakt' }
 ];
@@ -30,7 +29,6 @@ export default function Header() {
                         />
                         <span className="text-xl font-bold text-black tracking-tight">Runiq</span>
                     </Link>
-
                     {/* Navigace pro desktop */}
                     <nav className="flex items-center gap-8 max-md:hidden">
                         {navLinks.map((link) => (
